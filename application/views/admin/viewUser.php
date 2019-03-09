@@ -14,7 +14,7 @@
   <div id="notifikasi" class="alert alert-danger"><strong> Error! </strong> <?=$data2;?></div>
   <?php } ?>
 
-<div class="col-sm-12 grid-margin stretch-card">
+<div class="col-sm-10 right_col grid-margin stretch-card">
   <!-- <div class="row"> -->
 	<!-- <div class="col-sm-12"> -->
 		<div class="card-box table-responsive">

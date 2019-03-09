@@ -6,14 +6,15 @@
 	<div class="card">
 		<div class="card-body">
             <h4 class="card-title">Gejala Table</h4>
-            <!-- <button><?php echo anchor('ctrGejala/tbhGejala','Tambah Data', array('class' => 'btn btn-sm btn-info')); ?></button> -->
+            <!-- <button><?php echo anchor('ctrPasien/tbhPasien','Tambah Data', array('class' => 'btn btn-sm btn-info')); ?></button> -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="fa fa-plus-circle"></i> Tambah </button>
                     <table id="datatable" class="table table-bordered">
                       <thead>
                         <tr>
                           <th> No </th>
-                          <th> Nama Gejala </th>
-                          <th> Label </th>
+                          <th> Nama Pasien </th>
+                          <th> Alamat Pasien </th>
+                          <th> Tanggal Daftar </th>
                           <th> Aksi </th>
                         </tr>
                       </thead>
@@ -21,13 +22,14 @@
                       	<?php $no=1; foreach($all as $row): ?>
                   <tr>  
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $row->nama_gejala;?> </td>
-                        <td><?php echo $row->label_gejala;?> </td>
+                        <td><?php echo $row->nama;?> </td>
+                        <td><?php echo $row->alamat;?> </td>
+                        <td><?php echo $row->tgl_daftar;?> </td>
                         <td>
                           <center>
                             <div>
-                              <a data-toggle="modal" data-target="#modal-edit<?=$row->id_gejala;?>" class="btn btn-warning btn-circle" data-popup="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil"></i></a>
-                              <a href="<?php echo site_url('ctrGejala/hapus/'.$row->id_gejala); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->nama_gejala;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-trash"></i></a>
+                              <a data-toggle="modal" data-target="#modal-edit<?=$row->id_pasien;?>" class="btn btn-warning btn-circle" data-popup="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil"></i></a>
+                              <a href="<?php echo site_url('ctrPasien/hapus/'.$row->id_pasien); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->nama;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-trash"></i></a>
                             </div>
                           </center>
                         </td>
@@ -41,7 +43,7 @@
 
 <div id="modal-tambah" class="modal fade">
     <div class="modal-dialog">
-      <form action="<?php echo site_url('ctrGejala/tbhGejala'); ?>" method="post">
+      <form action="<?php echo site_url('ctrPasien/tbhPasien'); ?>" method="post">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -50,13 +52,13 @@
         <div class="modal-body">
           
           <div class="form-group">
-            <label class='col-md-3'>Nama Gejala</label>
-            <div class='col-md-9'><input type="text" name="nama_gejala" autocomplete="off" required placeholder="Masukkan Nama Gejala" class="form-control" ></div>
+            <label class='col-md-3'>Nama Pasien</label>
+            <div class='col-md-9'><input type="text" name="nama" autocomplete="off" required placeholder="Masukkan Nama Pasien" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-3'>Label Gejala</label>
-            <div class='col-md-9'><input type="text" name="label_gejala" autocomplete="off" required placeholder="Masukkan Label Gejala" class="form-control" ></div>
+            <label class='col-md-3'>Alamat Pasien</label>
+            <div class='col-md-9'><input type="text" name="alamat" autocomplete="off" required placeholder="Masukkan Alamat Pasien" class="form-control" ></div>
           </div>
           <br>
         </div>
@@ -70,9 +72,9 @@
 </div>
 
 <?php $no=0; foreach($all as $row): $no++; ?>
-<div id="modal-edit<?=$row->id_gejala;?>" class="modal fade">
+<div id="modal-edit<?=$row->id_pasien;?>" class="modal fade">
   <div class="modal-dialog">
-    <form action="<?php echo site_url('ctrGejala/edit'); ?>" method="post">
+    <form action="<?php echo site_url('ctrPasien/edit'); ?>" method="post">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -80,15 +82,15 @@
         </div>
         <div class="modal-body">
  
-          <input type="hidden" readonly value="<?=$row->id_gejala;?>" name="id_gejala" class="form-control" >
+          <input type="hidden" readonly value="<?=$row->id_pasien;?>" name="id_pasien" class="form-control" >
           <div class="form-group">
-            <label class='col-md-3'>Nama Gejala</label>
-            <div class='col-md-9'><input type="text" name="nama_gejala" autocomplete="off" value="<?=$row->nama_gejala;?>" required placeholder="Masukkan Nama Gejala" class="form-control" ></div>
+            <label class='col-md-3'>Nama Pasien</label>
+            <div class='col-md-9'><input type="text" name="nama" autocomplete="off" value="<?=$row->nama;?>" required placeholder="Masukkan Nama Pasien" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-3'>Label Gejala</label>
-            <div class='col-md-9'><input type="text" name="label_gejala" autocomplete="off" value="<?=$row->label_gejala;?>" required placeholder="Masukkan Label Gejala" class="form-control" ></div>
+            <label class='col-md-3'>Alamat Pasien</label>
+            <div class='col-md-9'><input type="text" name="alamat" autocomplete="off" value="<?=$row->alamat;?>" required placeholder="Masukkan Alamat Pasien" class="form-control" ></div>
           </div>
         </div>
 

@@ -1,17 +1,17 @@
-<?php
-    if ($this->session->userdata('level') != 1 && $this->session->userdata('level') != 2) {
-        redirect('ctrLogin');
-    }
-?>
+<!-- <?php
+    // if ($this->session->userdata('level') != 1 && $this->session->userdata('level') != 2) {
+    //     redirect('ctrLogin');
+    // }
+?> -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+  <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
     <title>Sistem Pakar Preeclampsia</title>
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -33,7 +33,7 @@
     <link href="<?php echo base_url() ?>assets/new/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="<?php echo base_url() ?>assets/new/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	
+  
     <!-- bootstrap-progressbar -->
     <link href="<?php echo base_url() ?>assets/new/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -77,7 +77,9 @@
                 <ul class="nav side-menu">
                   <li><a href="<?php echo site_url() ?>/welcome/dashboard"><i class="fa fa-home"></i> Home </a>
                   </li>
-                  <li><a href="<?php echo site_url() ?>/ctrUser"><i class="fa fa-user"></i> User </a>
+                  <li><a href="<?php echo site_url() ?>/ctrPasien"><i class="fa fa-user"></i> Pasien </a>
+                  </li>
+                  <li><a href="<?php echo site_url() ?>/ctrKategori"><i class="fa fa-user"></i> Kategori Gejala </a>
                   </li>
                   <li><a href="<?php echo site_url() ?>/ctrGejala"><i class="fa fa-folder"></i> Gejala </a>
                   </li>
@@ -107,7 +109,8 @@
                     <img src="<?php echo base_url() ?>assets/new/images/img.jpg" alt=""><?php echo $this->session->userdata('nama') ;?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="<?php echo site_url() ?>/ctrLogin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    <a class="dropdown-item"  href="<
+                    ?php echo site_url() ?>/ctrLogin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
                   </ul>

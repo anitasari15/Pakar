@@ -1,7 +1,7 @@
 <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+           Sistem Pakar Deteksi Preeklampsia by <a href="https://colorlib.com">Anita Sari 2020</a>
           </div>
           <div class="clearfix"></div>
         </footer>
