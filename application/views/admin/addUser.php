@@ -3,34 +3,41 @@
         echo form_open_multipart('ctrUser/tbhUser', array('class'=>'needs-validation', 'novalidate'=>''));
        ?>
 
-<div class="col-md-6 grid-margin stretch-card">
+<div class="">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Default form</h4>
-      <p class="card-description"> Basic form layout </p>
+      <h4 class="card-title">Tambah User</h4>
         <form class="forms-sample">
           <div class="form-group">
-            <label for="exampleInputUsername1">Username</label>
-              <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+            <label>Nama</label>
+              <input type="text" class="form-control" name="nama" value="<?php echo set_value('nama'); ?>" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label>Tanggal Lahir</label>
+              <input type="date" class="form-control" name="tgl_lahir" value="<?php echo set_value('tgl_lahir'); ?>" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label>Alamat</label>
+              <input type="text" class="form-control" name="alamat" value="<?php echo set_value('alamat'); ?>" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputConfirmPassword1">Confirm Password</label>
-              <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
+            <label>No Telephone</label>
+              <input type="text" class="form-control" name="no_telp" value="<?php echo set_value('no_telp'); ?>" required>
           </div>
-          <div class="form-check form-check-flat form-check-primary">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input"> Remember me </label>
+          <div class="form-group">
+            <label>Username</label>
+              <input type="text" class="form-control" name="username" value="<?php echo set_value('username'); ?>" required>
           </div>
-          <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
-          <button class="btn btn-light">Cancel</button>
+          <div class="form-group">
+            <label>Password</label>
+              <input type="password" class="form-control" name="password" value="<?php echo set_value('password'); ?>" required>
+          </div>
+          <div class="form-group">
+            <label>Level</label>
+              <input type="text" class="form-control" name="level" value="<?php echo set_value('level'); ?>" required>
+          </div>
+          <!-- <button id="submitBtn" type="submit" class="btn btn-gradient-primary mr-2" name="simpan">Tambah</button> -->
+          <td colspan="3"><input id="submitBtn" type="submit" name="simpan" value="simpan"></td>
         </form>
     </div>
   </div>

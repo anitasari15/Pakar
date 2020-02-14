@@ -18,29 +18,23 @@
                       </thead>
                       <tbody>
                       	<?php
+                        $b = 1;
                         foreach($user as $i):
-                              $id_user=$i['id_user'];
-                              $nama=$i['nama'];
-                              $tgl_lahir=$i['tgl_lahir'];
-                              $alamat=$i['alamat'];
-                              $no_telp=$i['no_telp'];
-                              $username=$i['username'];
-                              $password=$i['password'];
                         ?>
-                        <tr>
-                        <td><?php echo $id_user;?> </td>
-                        <td><?php echo $nama;?> </td>
-                        <td><?php echo $tgl_lahir ;?> </td>
-                        <td><?php echo $alamat;?> </td>
-                        <td><?php echo $no_telp;?> </td>
-                        <td><?php echo $username;?> </td>
-                        <td><?php echo $password;?> </td>
+                  <tr>  
+                        <td><?php echo $b++; ?></td>
+                        <td><?php echo $i->nama;?> </td>
+                        <td><?php echo $i->tgl_lahir;?> </td>
+                        <td><?php echo $i->alamat;?></td>
+                        <td><?php echo $i->no_telp ;?></td>
+                        <td><?php echo $i->username ;?></td>
+                        <td><?php echo $i->password; ?></td>
                         <td>
-                          <a href='<?php echo base_url() ?>ctrUser/edit<?php echo $id_user ?>' class='btn btn-sm btn-info'>Update</a>
-                          <a href='<?php echo base_url() ?>ctrUser/delete/<?php echo $id_user; ?>' class='btn btn-sm btn-danger'>Delete</a>
+                          <?php echo anchor('ctrUser/edit/'.$i->id_user,'Edit Data', array('class' => 'btn btn-sm btn-info')); ?>
+                          <button location.href="" class='btn btn-sm btn-danger' onClick='ConfirmDelete()'>Delete</button>
                         </td>
                   </tr>
-                        <?php endforeach;?>
+                  <?php endforeach;?>
                       </tbody>
                     </table>
         </div>

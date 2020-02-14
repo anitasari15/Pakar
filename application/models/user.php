@@ -3,8 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Model {
 
 	public function get_user(){
-		$query = $this->db->get('user');
-		return $query->result_array(); //ngambil data yg udah array 
+		$this->db->select('*');
+		$this->db->from('user');
+		return $this->db->get()->result();
 	}
 
 	public function get_single($id)
@@ -29,12 +30,15 @@ class User extends CI_Model {
 		$this->db->insert('user', $data);
 	}
 
-	public function update(){
+	public function update($enc_password){
 		$data = array(
 				'nama' => $this->input->post('nama'),
 				'tgl_lahir' => $this->input->post('tgl_lahir'),
 				'alamat' => $this->input->post('alamat'),
-				'no_telp' => $this->input->post('no_telp')
+				'no_telp' => $this->input->post('no_telp'),
+				'username' => $this->input->post('username'),
+				'password' => $enc_password,
+				'level' => $this->input->post('level')
 			);
 
 		$this->db->where('id_user',$id);
