@@ -18,7 +18,7 @@ class Gejala extends CI_Model {
 			'id_gejala' => '',
 			'kode_gejala' => 'kode_gejala',
 			'nama_gejala' => 'nama_gejala'
-		)
-		$this->db->insert('gejala',$data);
+		);
+		$this->db->insert('gejala', $data);
 	}
 }

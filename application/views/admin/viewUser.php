@@ -3,7 +3,7 @@
 		<div class="card-body">
             <h4 class="card-title">User Table</h4>
             <button class="btn-sm"><?php echo anchor('ctrUser/tbhUser','Tambah Data', array('class' => 'btn btn-sm bts')); ?></button>
-                    <table id="myTable" class="table table-bordered"s>
+                    <table id="myTable" class="table table-bordered">
                       <thead>
                         <tr>
                           <th> Id User </th>
