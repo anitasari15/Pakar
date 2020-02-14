@@ -45,19 +45,13 @@ class ctrUser extends CI_Controller
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		$data['user'] = $this->user->get_single($id);
+		$data['user'] = $this->user->get_user($id);
 
-		// if($this->input->post('edit')){
-		// 	$this->user->update($id);
-		// 	redirect('ctrUser');
-		// }
 		if($this->input->post('edit')){
-			$enc_password=md5($this->input->post('password'));
-			$this->user->update($enc_password);
-			// $this->session->set_flashdata('notif_user_edit', 'Data user berhasil diedit');
+			$this->user->update($id);
 			redirect('ctrUser');
 		}
-		// var_dump($data);
+		
 		$this->load->view('template/header');
 		$this->load->view('admin/editUser',$data);
 	}

@@ -30,15 +30,13 @@ class User extends CI_Model {
 		$this->db->insert('user', $data);
 	}
 
-	public function update($enc_password){
+	public function update($id){
 		$data = array(
 				'nama' => $this->input->post('nama'),
 				'tgl_lahir' => $this->input->post('tgl_lahir'),
 				'alamat' => $this->input->post('alamat'),
 				'no_telp' => $this->input->post('no_telp'),
-				'username' => $this->input->post('username'),
-				'password' => $enc_password,
-				'level' => $this->input->post('level')
+				'username' => $this->input->post('username')
 			);
 
 		$this->db->where('id_user',$id);
