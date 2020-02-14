@@ -31,7 +31,7 @@
                         <td><?php echo $i->password; ?></td>
                         <td>
                           <?php echo anchor('ctrUser/edit/'.$i->id_user,'Edit Data', array('class' => 'btn btn-sm btn-info')); ?>
-                          <button location.href="" class='btn btn-sm btn-danger' onClick='ConfirmDelete()'>Delete</button>
+                          <?php echo anchor('ctrUser/delete/'.$i->id_user,'Hapus Data', array('class' => 'btn btn-sm btn-danger')); ?>
                         </td>
                   </tr>
                   <?php endforeach;?>

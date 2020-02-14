@@ -25,21 +25,11 @@
           <div class="form-group">
             <label>Username</label>
               <input type="text" class="form-control" name="username" value="<?php echo $key->username; ?>" required>
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-              <input type="password" class="form-control" name="password" value="<?php echo $key->password; ?>" required>
-          </div>
-          <div class="form-group">
-            <label>Level</label>
-              <input type="text" class="form-control" name="level" value="<?php echo $key->level; ?>" required>
-          </div>
-          <!-- <button id="submitBtn" type="submit" class="btn btn-gradient-primary mr-2" name="simpan">Tambah</button> -->
           <input id="submitBtn" type="submit" name="edit" value="Edit" class="btn btn-primary">
         </form>
+        <?php endforeach;?>
     </div>
   </div>
 </div>
 
 
-<?php endforeach;?>

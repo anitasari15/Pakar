@@ -35,9 +35,9 @@ class ctrUser extends CI_Controller
 				$this->user->insert(md5($this->input->post('password')));
 			redirect('ctrUser');
 			}
-			var_dump($data);
-			// $this->load->view('template/header');
-			// $this->load->view('admin/addUser');
+			// var_dump($data);
+			$this->load->view('template/header');
+			$this->load->view('admin/addUser');
 		}
 	}
 
@@ -45,8 +45,10 @@ class ctrUser extends CI_Controller
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		$data['user'] = $this->user->get_user($id);
+		$data['user'] = $this->user->get_single($id);
 
+
+		// var_dump($data);
 		if($this->input->post('edit')){
 			$this->user->update($id);
 			redirect('ctrUser');
@@ -54,5 +56,9 @@ class ctrUser extends CI_Controller
 		
 		$this->load->view('template/header');
 		$this->load->view('admin/editUser',$data);
+	}
+	public function delete($id){
+		$this->user->delete($id);
+		redirect('ctrUser');
 	}
 }
