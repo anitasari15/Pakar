@@ -30,4 +30,8 @@ class Gejala extends CI_Model {
 		$this->db->where('id_gejala',$id);
 		$this->db->update('gejala', $data);
 	}
+
+	public function delete($id){
+		$query = $this->db->query('DELETE from gejala where id_gejala= '.$id);
+	}
 }

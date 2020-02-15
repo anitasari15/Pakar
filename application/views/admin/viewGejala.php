@@ -6,7 +6,7 @@
                     <table id="myTable" class="table table-bordered">
                       <thead>
                         <tr>
-                          <th> Id Gejala </th>
+                          <th> No </th>
                           <th> Kode Gejala </th>
                           <th> Nama Gejala </th>
                           <th> Aksi </th>
@@ -23,7 +23,7 @@
                         <td><?php echo $i->nama_gejala;?> </td>
                         <td>
                           <?php echo anchor('ctrGejala/edit/'.$i->id_gejala,'Edit Data', array('class' => 'btn btn-sm btn-info')); ?>
-                          <?php echo anchor('ctrGejala/delete/'.$i->id_gejala,'Hapus Data', array('class' => 'btn btn-sm btn-danger')); ?>
+                          <?php echo anchor('ctrGejala/hapus/'.$i->id_gejala,'Hapus Data', array('class' => 'btn btn-sm btn-danger')); ?>
                         </td>
                   </tr>
                   <?php endforeach;?>

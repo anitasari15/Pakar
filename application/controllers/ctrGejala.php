@@ -50,11 +50,16 @@ class ctrGejala extends CI_Controller
 
 		// var_dump($data);
 		if($this->input->post('edit')){
-			$this->user->update($id);
+			$this->gejala->update($id);
 			redirect('ctrGejala');
 		}
 		
 		$this->load->view('template/header');
 		$this->load->view('admin/editGejala',$data);
+	}
+
+	public function hapus($id){
+		$this->gejala->delete($id);
+		redirect('ctrGejala');
 	}
 }
