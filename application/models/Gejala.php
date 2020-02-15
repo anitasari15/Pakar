@@ -16,9 +16,18 @@ class Gejala extends CI_Model {
 	public function insert(){
 		$data = array(
 			'id_gejala' => '',
-			'kode_gejala' => 'kode_gejala',
-			'nama_gejala' => 'nama_gejala'
+			'kode_gejala' => $this->input->post('kode'),
+			'nama_gejala' => $this->input->post('nama')
 		);
-		$this->db->insert('gejala', $data);
+		return $this->db->insert('gejala', $data);
+	}
+
+	public function update($id){
+		$data = array(
+			'kode_gejala' => $this->input->post('kode_gejala'),
+			'nama_gejala' => $this->input->post('nama_gejala')
+		);
+		$this->db->where('id_gejala',$id);
+		$this->db->update('gejala', $data);
 	}
 }
