@@ -1,10 +1,6 @@
  <?php foreach ($penyakit as $key): ?>
 	<?php echo form_open('ctrPenyakit/edit/'.$key->id_penyakit, array('enctype'=>'multipart/form-data')); ?>
 
-<?php if($this->session->flashdata('notif_reservasi_hapus')): ?>
-          <?php echo '<div class="alert alert-danger">'.$this->session->flashdata('notif_reservasi_hapus').'</div>'; ?>
-          <?php endif; ?>
-          
 <div class="">
   <div class="card">
     <div class="card-body">
