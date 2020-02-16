@@ -1,3 +1,7 @@
+<?php if($this->session->flashdata('notif_user_hapus')): ?>
+          <?php echo '<div class="alert alert-danger">'.$this->session->flashdata('notif_user_hapus').'</div>'; ?>
+          <?php endif; ?>
+
 <div class="col-lg-12 grid-margin stretch-card">
 	<div class="card">
 		<div class="card-body">
@@ -31,7 +35,8 @@
                         <td><?php echo $i->password; ?></td>
                         <td>
                           <?php echo anchor('ctrUser/edit/'.$i->id_user,'Edit Data', array('class' => 'btn btn-sm btn-info')); ?>
-                          <?php echo anchor('ctrUser/delete/'.$i->id_user,'Hapus Data', array('class' => 'btn btn-sm btn-danger')); ?>
+                          <!-- <?php echo anchor('ctrUser/delete/'.$i->id_user,'Hapus Data', array('class' => 'btn btn-sm btn-danger')); ?> -->
+                          <button location.href="" class='btn btn-sm btn-danger' onClick='ConfirmDelete()'>Delete</button>
                         </td>
                   </tr>
                   <?php endforeach;?>
@@ -40,7 +45,15 @@
         </div>
     </div>
 </div>
-
+<script>
+function ConfirmDelete()
+      {
+            if (confirm("Hapus User?"))
+                 location.href='ctrUser/delete/<?php echo $i->id_user?>';
+            else
+                 location.href='ctrUser';
+      }
+</script>
 <script>
   $(document).ready( function () {
     $('#myTable').DataTable();

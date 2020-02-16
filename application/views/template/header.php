@@ -104,7 +104,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/charts/chartjs.html">
+              <a class="nav-link" href="<?php echo site_url()?>/ctrPenyakit">
                 <span class="menu-title">Penyakit</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>

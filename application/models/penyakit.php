@@ -8,7 +8,7 @@ class Penyakit extends CI_Model
 {
 	
 	public function get_penyakit(){
-		$this->db->select(*);
+		$this->db->select('*');
 		$this->db->from('penyakit');
 		return $this->db->get()->result();
 	}
@@ -22,22 +22,22 @@ class Penyakit extends CI_Model
 		$data = array(
 			'id_penyakit' => '',
 			'tipe_penyakit' => $this->input->post('tipe_penyakit'),
-			'solusi' => $this->input->post('solusi')
+			'saran' => $this->input->post('saran')
 		);
-		return $this->db->insert('penyakit');
+		return $this->db->insert('penyakit', $data);
 	}
 
 	public function update($id){
 		$data = array(
 			'id_penyakit' => '',
 			'tipe_penyakit' => $this->input->post('tipe_penyakit'),
-			'solusi' => $this->input->post('solusi')
+			'saran' => $this->input->post('saran')
 		);
 		$this->db->where('id_penyakit', $id);
 		$this->db->update('penyakit', $data);
 	}
 
 	public function delete($id){
-		$query = $this->db->query('DELETE FROM penyakit WHERE id_penyakit =' $id);
+		$query = $this->db->query('DELETE FROM penyakit WHERE id_penyakit =' .$id);
 	}
 }

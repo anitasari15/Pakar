@@ -5,29 +5,29 @@
 <div class="col-lg-12 grid-margin stretch-card">
 	<div class="card">
 		<div class="card-body">
-            <h4 class="card-title">Gejala Table</h4>
-            <button><?php echo anchor('ctrGejala/tbhGejala','Tambah Data', array('class' => 'btn btn-sm btn-info')); ?></button>
+            <h4 class="card-title">Penyakit Table</h4>
+            <button><?php echo anchor('ctrPenyakit/tbhPenyakit','Tambah Data', array('class' => 'btn btn-sm btn-info')); ?></button>
                     <table id="myTable" class="table table-bordered">
                       <thead>
                         <tr>
                           <th> No </th>
-                          <th> Kode Gejala </th>
-                          <th> Nama Gejala </th>
+                          <th> Tipe Penyakit </th>
+                          <th> Saran </th>
                           <th> Aksi </th>
                         </tr>
                       </thead>
                       <tbody>
                       	<?php
                         $b = 1;
-                        foreach($gejala as $i):
+                        foreach($penyakit as $i):
                         ?>
                   <tr>  
                         <td><?php echo $b++; ?></td>
-                        <td><?php echo $i->kode_gejala;?> </td>
-                        <td><?php echo $i->nama_gejala;?> </td>
+                        <td><?php echo $i->tipe_penyakit;?> </td>
+                        <td><?php echo $i->saran;?> </td>
                         <td>
-                          <?php echo anchor('ctrGejala/edit/'.$i->id_gejala,'Edit Data', array('class' => 'btn btn-sm btn-info')); ?>
-                          <!-- <?php echo anchor('ctrGejala/hapus/'.$i->id_gejala,'Hapus Data', array('class' => 'btn btn-sm btn-danger')); ?> -->
+                          <?php echo anchor('ctrPenyakit/edit/'.$i->id_penyakit,'Edit Data', array('class' => 'btn btn-sm btn-info')); ?>
+                          <!-- <?php echo anchor('ctrPenyakit/hapus/'.$i->id_penyakit,'Hapus Data', array('class' => 'btn btn-sm btn-danger')); ?> -->
                           <button location.href="" class='btn btn-sm btn-danger' onClick='ConfirmDelete()'>Delete</button>
                         </td>
                   </tr>
@@ -40,10 +40,10 @@
 <script>
 function ConfirmDelete()
       {
-            if (confirm("Hapus Gejala?"))
-                 location.href='ctrGejala/hapus/<?php echo $i->id_gejala?>';
+            if (confirm("Hapus Penyakit?"))
+                 location.href='ctrPenyakit/hapus/<?php echo $i->id_penyakit?>';
             else
-                 location.href='ctrGejala';
+                 location.href='ctrPenyakit';
       }
 </script>
 <script>

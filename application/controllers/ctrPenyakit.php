@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		$data['penyakit'] = $this->penyakit->get_penyakit();
 
  		$this->load->view('template/header');
- 		$this->load->view('admin/viewPenyakit');
+ 		$this->load->view('admin/viewPenyakit', $data);
  		$this->load->view('template/footer');
  	}
 
@@ -45,5 +45,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->load->view('template/header');
 			$this->load->view('admin/addPenyakit');
 		}
+ 	}
+
+ 	public function edit($id){
+ 		$this->load->helper('form');
+
+		$data['penyakit'] = $this->penyakit->get_single($id);
+
+
+		// var_dump($data);
+		if($this->input->post('edit')){
+			$this->penyakit->update($id);
+			redirect('ctrPenyakit');
+		}
+		
+		$this->load->view('template/header');
+		$this->load->view('admin/editPenyakit',$data);
+ 	}
+
+ 	public function hapus($id){
+ 		$this->penyakit->delete($id);
+ 		redirect('ctrPenyakit');
  	}
  }
