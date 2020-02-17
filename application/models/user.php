@@ -8,6 +8,14 @@ class User extends CI_Model {
 		return $this->db->get()->result();
 	}
 
+	public function get_file($id_user)
+	{
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->where('id_user', $id_user);
+		return $this->db->get()->result();
+	}
+
 	public function get_single($id)
 	{
 		$query = $this->db->query('SELECT * from user WHERE id_user='.$id);
@@ -45,6 +53,19 @@ class User extends CI_Model {
 
 	public function delete($id){
 		$query = $this->db->query('DELETE from user WHERE id_user= '.$id);
+	}
+
+	public function login($username, $password){
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+
+		$result = $this->db->get('user');
+
+		if ($result->num_rows() == 1) {
+			return $result->row(0)->id_user;
+		} else {
+			return false;
+		}
 	}
 
 }

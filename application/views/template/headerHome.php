@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>Mighty &mdash; Website Template by Colorlib</title>
+    <title>Sistem Pakar Preeclampsia</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -46,7 +46,7 @@
 
             <div class="col-3 ">
               <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">Mighty.</a>
+                <a href="index.html" class="font-weight-bold">Sistem Pakar</a>
               </div>
             </div>
 
@@ -59,7 +59,7 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                  <li class="active"><a href="<?php echo site_url() ?>/ctrLogin" class="nav-link">Login</a></li>
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="work.html" class="nav-link">Work</a></li>
                   <li><a href="journal.html" class="nav-link">Journal</a></li>
@@ -75,7 +75,7 @@
       </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" style="background-image: url('<?php echo base_url() ?>assets/home/images/hero_1.jpg')">
+      <div class="site-section-cover overlay" style="background-image: url('<?php echo base_url() ?>assets/home/images/a.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">
@@ -151,302 +151,7 @@
       </div>
     </div>
 
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-7 mx-auto text-center">
-            <h2 class="heading-29190">Our Services</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <div class="service-29128 text-center">
-              <span class="d-block wrap-icon">
-                <span class="icon-desktop_mac"></span>
-              </span>
-              <h3>Web Design</h3>
-              <p>Lorem ipsum dolor sit amet. Consectetur adipisicing elit Eaque commodi.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-29128 text-center">
-              <span class="d-block wrap-icon">
-                <span class="icon-desktop_mac"></span>
-              </span>
-              <h3>Graphic Design</h3>
-              <p>Lorem ipsum dolor sit amet. Consectetur adipisicing elit Eaque commodi.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-29128 text-center">
-              <span class="d-block wrap-icon">
-                <span class="icon-desktop_mac"></span>
-              </span>
-              <h3>Web Apps</h3>
-              <p>Lorem ipsum dolor sit amet. Consectetur adipisicing elit Eaque commodi.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="service-29128 text-center">
-              <span class="d-block wrap-icon">
-                <span class="icon-desktop_mac"></span>
-              </span>
-              <h3>Ecommerce</h3>
-              <p>Lorem ipsum dolor sit amet. Consectetur adipisicing elit Eaque commodi.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section">
-      <div class="container">
-
-        <div class="row mb-5">
-          <div class="col-md-7 mx-auto text-center">
-            <h2 class="heading-29190">Our Works</h2>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="item web">
-              <a href="work-single.html" class="item-wrap" data-fancybox="gal">
-                <span class="icon-add"></span>
-                <img class="img-fluid" src="images/img_1.jpg">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="item web">
-              <a href="work-single.html" class="item-wrap" data-fancybox="gal">
-                <span class="icon-add"></span>
-                <img class="img-fluid" src="images/img_2.jpg">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="item web">
-              <a href="work-single.html" class="item-wrap" data-fancybox="gal">
-                <span class="icon-add"></span>
-                <img class="img-fluid" src="images/img_3.jpg">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="item web">
-              <a href="work-single.html" class="item-wrap" data-fancybox="gal">
-                <span class="icon-add"></span>
-                <img class="img-fluid" src="images/img_4.jpg">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="item web">
-              <a href="work-single.html" class="item-wrap" data-fancybox="gal">
-                <span class="icon-add"></span>
-                <img class="img-fluid" src="images/img_5.jpg">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="item web">
-              <a href="work-single.html" class="item-wrap" data-fancybox="gal">
-                <span class="icon-add"></span>
-                <img class="img-fluid" src="images/img_6.jpg">
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        
-      </div>
-    </div> <!-- END .site-section -->
-
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="fact-39281 d-flex align-items-center">
-              <div class="wrap-icon mr-3">
-                <span class="icon-smile-o"></span>
-              </div>
-              <div class="text">
-                <span class="d-block">83</span>
-                <span>Happy Clients</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="fact-39281 d-flex align-items-center">
-              <div class="wrap-icon mr-3">
-                <span class="icon-coffee"></span>
-              </div>
-              <div class="text">
-                <span class="d-block">3892</span>
-                <span>Cup of Coffee</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="fact-39281 d-flex align-items-center">
-              <div class="wrap-icon mr-3">
-                <span class="icon-code"></span>
-              </div>
-              <div class="text">
-                <span class="d-block">3,923,892</span>
-                <span>Line of Codes</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <div class="fact-39281 d-flex align-items-center">
-              <div class="wrap-icon mr-3">
-                <span class="icon-desktop_mac"></span>
-              </div>
-              <div class="text">
-                <span class="d-block">3892</span>
-                <span>Project Finish</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-7 mx-auto text-center">
-            <h2 class="heading-29190">See Our Studio</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-
-            <a href="https://vimeo.com/191947042" data-fancybox  class="btn-video_38929">
-              <span><span class="icon-play"></span></span>
-              <img src="<?php echo base_url() ?>assets/home/images/img_1.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section bg-light">
-      <div class="container">
-
-        <div class="row mb-5">
-          <div class="col-md-7 mx-auto text-center">
-            <h2 class="heading-29190">Testimonials</h2>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            
-            <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="<?php echo base_url() ?>assets/home/images/person_1.jpg" alt="Image" class="img-fluid">
-              </div>  
-              
-              <blockquote class="quote_39823">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
-              </blockquote>
-              <p>&mdash; Chris Smith</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            
-            
-            <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="<?php echo base_url() ?>assets/home/images/person_2.jpg" alt="Image" class="img-fluid">
-              </div>  
-              <blockquote class="quote_39823">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
-              </blockquote>
-              <p>&mdash; Chris Smith</p>
-            </div>
-
-          </div>
-          <div class="col-lg-4 col-md-6">
-            
-            <div>
-              <div class="person-pic-39219 mb-4">
-                <img src="<?php echo base_url() ?>assets/home/images/person_3.jpg" alt="Image" class="img-fluid">
-              </div>  
-              <blockquote class="quote_39823">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas excepturi accusantium non aut perspiciatis nisi magni libero, molestias.</p>
-              </blockquote>
-              <p>&mdash; Chris Smith</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section bg-white">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-7 mx-auto text-center">
-            <h2 class="heading-29190">Blog</h2>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="single.html">
-                <img src="<?php echo base_url() ?>assets/home/images/img_1.jpg" alt="Image"
-                 class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="single.html">Lorem ipsum dolor sit amet</a></h2>
-                <span class="meta d-inline-block mb-3">July 17, 2019 <span class="mx-2">by</span> <a href="#">home</a></span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="single.html">
-                <img src="<?php echo base_url() ?>assets/home/images/img_2.jpg" alt="Image"
-                 class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="single.html">Lorem ipsum dolor sit amet</a></h2>
-                <span class="meta d-inline-block mb-3">July 17, 2019 <span class="mx-2">by</span> <a href="#">home</a></span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="single.html">
-                <img src="<?php echo base_url() ?>assets/home/images/img_3.jpg" alt="Image"
-                 class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents">
-                
-                <h2><a href="single.html">Lorem ipsum dolor sit amet</a></h2>
-                <span class="meta d-inline-block mb-3">July 17, 2019 <span class="mx-2">by</span> <a href="#">home</a></span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <footer class="site-footer">
       <div class="container">
