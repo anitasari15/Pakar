@@ -1,6 +1,6 @@
 <?php
-    if ($this->session->userdata('level') != 1 && $this->session->userdata('level') != 2 && $this->session->userdata('level') != 3) {
-        redirect('welcome');
+    if ($this->session->userdata('level') == 1 && $this->session->userdata('level') == 2) {
+        redirect('ctrGejala');
     }
 ?>
 
@@ -63,7 +63,8 @@
                 <a class="dropdown-item" href="#">
                   <!-- <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
                 <div class="dropdown-divider"></div> -->
-                <a class="dropdown-item" href="<?php echo site_url() ?>/welcome">
+                <a class="dropdown-item" href="<?php echo site_url() ?>/ctrLogin/logOut">
+                  <!-- <?php echo anchor('ctrLogin/logOut','Logout', array('class' => 'logout')); ?> -->
                   <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
               </div>
             </li>
@@ -93,7 +94,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo site_url() ?>/welcome">
+              <a class="nav-link" href="<?php echo site_url() ?>/welcome/dashboard">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>

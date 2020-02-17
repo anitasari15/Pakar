@@ -32,10 +32,10 @@
             <label>Password</label>
               <input type="password" class="form-control" name="password" value="<?php echo set_value('password'); ?>" required>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label>Level</label>
               <input type="text" class="form-control" name="level" value="<?php echo set_value('level'); ?>" required>
-          </div>
+          </div> -->
           <!-- <button id="submitBtn" type="submit" class="btn btn-gradient-primary mr-2" name="simpan">Tambah</button> -->
           <td colspan="3"><input id="submitBtn" type="submit" name="simpan" value="simpan"></td>
         </form>

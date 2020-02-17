@@ -32,7 +32,7 @@ class User extends CI_Model {
 			'no_telp' => $this->input->post('no_telp'),
 			'username' => $this->input->post('username'),
 			'password' => $enc_password,
-			'level' => $this->input->post('level')
+			'level' => '2'
 		);
 
 		$this->db->insert('user', $data);

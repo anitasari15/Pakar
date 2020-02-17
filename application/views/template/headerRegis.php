@@ -30,21 +30,25 @@
 	<div class="container">
 		
 		<div class="form-bg">
-			<?php echo form_open('ctrLogin/cekLogin');?>
-			<form>
-				<h2>Login</h2>
-				<p><input type="text" name="username" placeholder="Username"></p>
-				<p><input type="password" name="password" placeholder="Password"></p>
+			<?php echo form_open_multipart('ctrRegis/register', array('class'=>'needs-validation', 'novalidate'=>''));?>
+			<form class="form-bg">
+				<h2>Register</h2>
+				<p><input type="text" name="nama" placeholder="nama"></p>
+				<p><input type="date" name="tgl_lahir" placeholder="tgl_lahir"></p>
+				<p><input type="text" name="alamat" placeholder="alamat"></p>
+				<p><input type="text" name="no_telp" placeholder="no_telp"></p>
+				<p><input type="text" name="username" placeholder="username"></p>
+				<p><input type="password" name="password" placeholder="password"></p>
 				<!-- <label for="remember">
 				  <input type="checkbox" id="remember" value="remember" />
 				  <span>Remember me on this computer</span>
 				</label> -->
-				<button name="login" type="submit"></button>
-			<form>
+				<button input id="submitBtn" type="submit" name="simpan" value="simpan"></button>
+			</form>
 		</div>
 
 	
-		<p class="forgot">Do you have a account ? <a href="">Click here to register.</a></p>
+		<!-- <p class="forgot">Forgot your password? <a href="">Click here to reset it.</a></p> -->
 
 
 	</div><!-- container -->

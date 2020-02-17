@@ -60,10 +60,10 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="<?php echo site_url() ?>/ctrLogin" class="nav-link">Login</a></li>
-                  <li><a href="about.html" class="nav-link">About</a></li>
-                  <li><a href="work.html" class="nav-link">Work</a></li>
+                  <li><a href="<?php echo site_url() ?>/ctrRegis" class="nav-link">Registrasi</a></li>
+                  <!-- <li><a href="work.html" class="nav-link">Work</a></li>
                   <li><a href="journal.html" class="nav-link">Journal</a></li>
-                  <li><a href="contact.html" class="nav-link">Contact</a></li>
+                  <li><a href="contact.html" class="nav-link">Contact</a></li> -->
                 </ul>
               </nav>
             </div>

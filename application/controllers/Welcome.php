@@ -23,4 +23,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('template/headerHome');
 		// $this->load->view('admin/dashboard');
 	}
+	public function dashboard(){
+		$this->load->view('template/header');
+		$this->load->view('admin/dashboard');
+		$this->load->view('template/footer');
+	}
 }
