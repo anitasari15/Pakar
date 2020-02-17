@@ -33,8 +33,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			// var_dump($id_user); 
 			// die();
 			if ($id_user) {
-				$level = $this->user->get_user($id_user);
-				$nama = $this->user->get_user($id_user);
+				$level = $this->user->get_file($id_user);
+				$nama = $this->user->get_file($id_user);
 				$user_data = array(
 					'id_user' => $id_user,
 					'username' => $username,
@@ -59,4 +59,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		}
  	}
+
+ 	public function logOut()
+	{
+		$this->session->unset_userdata('logged_in');
+		$this->session->unset_userdata('id_user');
+		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('level');
+		$this->session->unset_userdata('nama');
+		$this->session->set_flashdata('user_loggedout', 'You are logged out');
+
+		redirect('ctrLogin');
+	}
  }

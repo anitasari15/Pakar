@@ -1,9 +1,16 @@
+<?php
+    if ($this->session->userdata('level') != 1 && $this->session->userdata('level') != 2 && $this->session->userdata('level') != 3) {
+        redirect('welcome');
+    }
+?>
+
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>Sistem Pakar Preeclampsia</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/css/vendor.bundle.base.css">
@@ -45,18 +52,18 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src="<?php echo base_url() ?>assets/images/faces/face1.jpg" alt="image">
+                  <img src="<?php echo base_url() ?>assets/images/faces-clipart/pic-1.png" alt="image">
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">David Greymaax</p>
+                  <p class="mb-1 text-black"><?php echo $this->session->userdata('nama') ;?></p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                 <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                  <!-- <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
+                <div class="dropdown-divider"></div> -->
+                <a class="dropdown-item" href="<?php echo site_url() ?>/welcome">
                   <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
               </div>
             </li>
@@ -74,13 +81,13 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="<?php echo base_url() ?>assets/images/faces/face1.jpg" alt="profile">
+                  <img src="<?php echo base_url() ?>assets/images/faces-clipart/pic-1.png" alt="profile">
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">David Grey. H</span>
-                  <span class="text-secondary text-small">Project Manager</span>
+                  <span class="font-weight-bold mb-2"><?php echo $this->session->userdata('nama') ;?></span>
+                  <!-- <span class="text-secondary text-small">Project Manager</span> -->
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
@@ -92,10 +99,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <?php if($this->session->userdata('level') == '2') { ?>
               <a class="nav-link" href="<?php echo site_url() ?>/ctrUser">
                 <span class="menu-title">User</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
+              <?php } ?>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo site_url()?>/ctrGejala">
