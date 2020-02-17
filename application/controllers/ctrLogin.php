@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$password = md5($this->input->post('password'));
 
 			$id_user = $this->user->login($username, $password);
-			// var_dump($id_user);
+			// var_dump($id_user); 
 			// die();
 			if ($id_user) {
 				$level = $this->user->get_user($id_user);
@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'username' => $username,
 					'nama' => $nama[0]->nama,
 					'logged_in' => true,
-					'level' => $level[0]->level
+					'level' => $level[0]->level  
 				);
 
 				$this->session->set_userdata($user_data);
