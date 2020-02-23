@@ -1,59 +1,88 @@
-<!doctype html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> 	<html lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-	<!-- General Metas -->
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	<!-- Force Latest IE rendering engine -->
-	<title>Login Form</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-	
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/login/css/base.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/login/css/skeleton.css">
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/login/css/layout.css">
-	
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/login/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/login/css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-	<!-- Primary Page Layout -->
+	
+	<div class="limiter">
 
-	<div class="container">
-		
-		<div class="form-bg">
-			<?php echo form_open('ctrLogin/cekLogin');?>
-			<form>
-				<h2>Login</h2>
-				<p><input type="text" name="username" placeholder="Username"></p>
-				<p><input type="password" name="password" placeholder="Password"></p>
-				<!-- <label for="remember">
-				  <input type="checkbox" id="remember" value="remember" />
-				  <span>Remember me on this computer</span>
-				</label> -->
-				<button name="login" type="submit"></button>
-			<form>
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<?php echo form_open('ctrLogin/cekLogin', array('enctype'=>'multipart/form-data', 'class'=>'login100-form validate-form p-l-55 p-r-55 p-t-178'));?>
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+					<span class="login100-form-title">
+						Sign In
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+						<input class="input100" type="text" name="username" placeholder="Username">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Please enter password">
+						<input class="input100" type="password" name="password" placeholder="Password">
+						<span class="focus-input100"></span>
+					</div>
+					<br>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" name="simpan" value="simpan" type="submit">
+							Sign in
+						</button>
+					</div>
+					<div class="flex-col-c p-t-50 p-b-20">
+						<span class="txt1 p-b-9">
+							Don’t have an account?
+						</span>
+
+						<a href="<?php echo site_url()?>/ctrRegis" class="txt3">
+							Sign up now
+						</a>
+					</div>
+				</form>
+			</div>
 		</div>
-
+	</div>
 	
-		<p class="forgot">Do you have a account ? <a href="">Click here to register.</a></p>
-
-
-	</div><!-- container -->
-
-	<!-- JS  -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-	<script>window.jQuery || document.write("<script src='<?php echo base_url() ?>assets/login/js/jquery-1.5.1.min.js'>\x3C/script>")</script>
-	<script src="js/app.js"></script>
 	
-<!-- End Document -->
+<!--===============================================================================================-->
+	<script src="<?php echo base_url() ?>assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?php echo base_url() ?>assets/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?php echo base_url() ?>assets/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="<?php echo base_url() ?>assets/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?php echo base_url() ?>assets/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?php echo base_url() ?>assets/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="<?php echo base_url() ?>assets/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="<?php echo base_url() ?>assets/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="<?php echo base_url() ?>assets/login/js/main.js"></script>
+
 </body>
 </html>
