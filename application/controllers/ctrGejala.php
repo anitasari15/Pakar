@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  /**
  * 
  */
-cindexlass ctrGejala extends CI_Controller
+class ctrGejala extends CI_Controller
 {
 	
 	function __construct()
@@ -14,52 +14,60 @@ cindexlass ctrGejala extends CI_Controller
 		$this->load->model('gejala');
 	}
 	public function index(){
-		$data['gejala'] = $this->gejala->get_gejala();
-		$this->load->view('template/index');
+		$data=array(
+            // "content"=>'Tampil_Modal',
+            "all"=>$this->db->get('gejala')->result(),
+            // "judul"=>"Modal",
+        );
+        $this->load->view('template/index');
 		$this->load->view('admin/viewGejala', $data);
 		$this->load->view('template/footerindex');	
 	}
 
 	public function tbhGejala(){
-		$data = array();
-
-		$this->load->helper('form');
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('nama', 'nama_gejala', 'required');
-
-		if ($this->form_validation->run() == FALSE){
-			$this->load->view('template/index');
-			$this->load->view('admin/addGejala');
-		}else{
-			if($this->input->post('simpan')){
-				$this->gejala->insert();
-			redirect('ctrGejala');
-				// var_dump($data);
-			}
-			// var_dump($data);
-			$this->load->view('template/index');
-			$this->load->view('admin/addGejala');
-		}
+        $this->form_validation->set_rules('kode_gejala', 'kode_gejala', 'required');
+        if($this->form_validation->run()==FALSE){
+            $this->session->set_flashdata('error',"Data Gagal Di Tambahkan");
+            redirect('ctrGejala');
+        }else{
+            $data=array(
+                "kode_gejala"=>$_POST['kode_gejala'],
+                "nama_gejala"=>$_POST['nama_gejala'],
+            );
+            $this->db->insert('gejala',$data);
+            $this->session->set_flashdata('sukses',"Data Berhasil Disimpan");
+            redirect('ctrGejala');
+        }
 	}
 
-	public function edit($id){
-		$this->load->helper('form');
-
-		$data['gejala'] = $this->gejala->get_single($id);
-
-
-		// var_dump($data);
-		if($this->input->post('edit')){
-			$this->gejala->update($id);
-			redirect('ctrGejala');
-		}
-		
-		$this->load->view('template/index');
-		$this->load->view('admin/editGejala',$data);
+	public function edit(){
+		$this->load->library('form_validation');
+        $this->form_validation->set_rules('kode_gejala', 'kode_gejala', 'required');
+        if($this->form_validation->run()==FALSE){
+            $this->session->set_flashdata('error',"Data Gagal Di Edit");
+            redirect('ctrGejala');
+        }else{
+            $data=array(
+                "kode_gejala"=>$_POST['kode_gejala'],
+                "nama_gejala"=>$_POST['nama_gejala'],
+            );
+            $this->db->where('id_gejala', $_POST['id_gejala']);
+            $this->db->update('gejala',$data);
+            $this->session->set_flashdata('sukses',"Data Berhasil Diedit");
+            redirect('ctrGejala');
+        }
 	}
 
 	public function hapus($id){
-		$this->gejala->delete($id);
-		redirect('ctrGejala');
+		if($id==""){
+            $this->session->set_flashdata('error',"Data Anda Gagal Di Hapus");
+            redirect('ctrGejala');
+        }else{
+            $this->db->where('id_gejala', $id);
+            $this->db->delete('gejala');
+            $this->session->set_flashdata('sukses',"Data Berhasil Dihapus");
+            redirect('ctrGejala');
+        }
 	}
 }

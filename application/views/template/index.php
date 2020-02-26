@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela! | </title>
+    <title>Sistem Pakar Preeclampsia</title>
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <!-- Datatables -->
     
@@ -51,7 +51,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Sistem Pakar</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -81,7 +81,7 @@
                   </li>
                   <li><a href="<?php echo site_url() ?>/ctrGejala"><i class="fa fa-folder"></i> Gejala </a>
                   </li>
-                  <li><a href="ctrPenyakit"><i class="fa fa-table"></i> Penyakit </span></a>
+                  <li><a href="<?php echo site_url() ?>/ctrPenyakit"><i class="fa fa-table"></i> Penyakit </span></a>
                   </li>
                   <li><a href="<?php echo site_url() ?>/ctrRekam"><i class="fa fa-bar-chart-o"></i> Rekam Medik </a>
                   </li>
@@ -107,7 +107,7 @@
                     <img src="<?php echo base_url() ?>assets/new/images/img.jpg" alt=""><?php echo $this->session->userdata('nama') ;?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    <a class="dropdown-item"  href="<?php echo site_url() ?>/ctrLogin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
                   </ul>

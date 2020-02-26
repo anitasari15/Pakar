@@ -60,6 +60,10 @@
 						<a href="<?php echo site_url()?>/ctrRegis" class="txt3">
 							Sign up now
 						</a>
+
+						<span class="txt1 p-b-9">
+							Back to home? <a href="<?php echo site_url()?>/welcome">Home</a>
+						</span>
 					</div>
 				</form>
 			</div>
