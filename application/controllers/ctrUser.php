@@ -14,51 +14,68 @@ class ctrUser extends CI_Controller
 	}
 
 	public function index(){
-		$data['user'] = $this->user->get_user();
-		$this->load->view('template/header');
+		$data=array(
+            // "content"=>'Tampil_Modal',
+            "all"=>$this->db->get('user')->result(),
+            // "judul"=>"Modal",
+        );
+		$this->load->view('template/index');
 		$this->load->view('admin/viewUser', $data);
-		$this->load->view('template/footer');	
+		$this->load->view('template/footerindex');	
 	}
 
 	public function tbhUser(){
-		$data = array();
-
-		$this->load->helper('form');
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('nama', 'nama', 'required');
-
-		if ($this->form_validation->run() == FALSE){
-			$this->load->view('template/header');
-			$this->load->view('admin/addUser');
-		}else{
-			if($this->input->post('simpan')){
-				$this->user->insert(md5($this->input->post('password')));
-			redirect('ctrUser');
-			}
-			// var_dump($data);
-			$this->load->view('template/header');
-			$this->load->view('admin/addUser');
-		}
+        $this->form_validation->set_rules('nama', 'nama', 'required');
+        if($this->form_validation->run()==FALSE){
+            $this->session->set_flashdata('error',"Data Gagal Di Tambahkan");
+            redirect('ctrUser');
+        }else{
+            $data=array(
+                "nama"=>$_POST['nama'],
+                "tgl_lahir"=>$_POST['tgl_lahir'],
+                "alamat"=>$_POST['alamat'],
+                "no_telp"=>$_POST['no_telp'],
+                "username"=>$_POST['username'],
+                "password"=>$_POST['password'],
+                "level"=>'2'
+            );
+            $this->db->insert('user',$data);
+            $this->session->set_flashdata('sukses',"Data Berhasil Disimpan");
+            redirect('ctrUser');
+        }
 	}
 
-	public function edit($id){	
-		$this->load->helper('form');
+	public function edit(){	
 		$this->load->library('form_validation');
-
-		$data['user'] = $this->user->get_single($id);
-
-
-		// var_dump($data);
-		if($this->input->post('edit')){
-			$this->user->update($id);
-			redirect('ctrUser');
-		}
-		
-		$this->load->view('template/header');
-		$this->load->view('admin/editUser',$data);
+        $this->form_validation->set_rules('nama', 'nama', 'required');
+        if($this->form_validation->run()==FALSE){
+            $this->session->set_flashdata('error',"Data Gagal Di Edit");
+            redirect('ctrUser');
+        }else{
+            $data=array(
+                "nama"=>$_POST['nama'],
+                "tgl_lahir"=>$_POST['tgl_lahir'],
+                "alamat"=>$_POST['alamat'],
+                "no_telp"=>$_POST['no_telp'],
+                "username"=>$_POST['username'],
+                "password"=>$_POST['password'],
+            );
+            $this->db->where('id_user', $_POST['id_user']);
+            $this->db->update('user',$data);
+            $this->session->set_flashdata('sukses',"Data Berhasil Diedit");
+            redirect('ctrUser');
+        }
 	}
 	public function delete($id){
-		$this->user->delete($id);
-		redirect('ctrUser');
+		if($id==""){
+            $this->session->set_flashdata('error',"Data Anda Gagal Di Hapus");
+            redirect('ctrUser');
+        }else{
+            $this->db->where('id_user', $id);
+            $this->db->delete('user');
+            $this->session->set_flashdata('sukses',"Data Berhasil Dihapus");
+            redirect('ctrUser');
+        }
 	}
 }

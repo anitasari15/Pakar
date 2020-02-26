@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  /**
  * 
  */
-class ctrGejala extends CI_Controller
+cindexlass ctrGejala extends CI_Controller
 {
 	
 	function __construct()
@@ -15,9 +15,9 @@ class ctrGejala extends CI_Controller
 	}
 	public function index(){
 		$data['gejala'] = $this->gejala->get_gejala();
-		$this->load->view('template/header');
+		$this->load->view('template/index');
 		$this->load->view('admin/viewGejala', $data);
-		$this->load->view('template/footer');	
+		$this->load->view('template/footerindex');	
 	}
 
 	public function tbhGejala(){
@@ -28,7 +28,7 @@ class ctrGejala extends CI_Controller
 		$this->form_validation->set_rules('nama', 'nama_gejala', 'required');
 
 		if ($this->form_validation->run() == FALSE){
-			$this->load->view('template/header');
+			$this->load->view('template/index');
 			$this->load->view('admin/addGejala');
 		}else{
 			if($this->input->post('simpan')){
@@ -37,7 +37,7 @@ class ctrGejala extends CI_Controller
 				// var_dump($data);
 			}
 			// var_dump($data);
-			$this->load->view('template/header');
+			$this->load->view('template/index');
 			$this->load->view('admin/addGejala');
 		}
 	}
@@ -54,7 +54,7 @@ class ctrGejala extends CI_Controller
 			redirect('ctrGejala');
 		}
 		
-		$this->load->view('template/header');
+		$this->load->view('template/index');
 		$this->load->view('admin/editGejala',$data);
 	}
 
