@@ -36,11 +36,9 @@
           </div>
         </div>
           <!-- /top tiles -->
-
           <div class="row">
             <div class="col-md-12 col-sm-12 ">
               <div class="dashboard_graph">
-
                 <div class="row x_title">
                   <div class="col-md-6">
                     <h3>Network Activities <small>Graph title sub-title</small></h3>
@@ -52,7 +50,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="col-md-9 col-sm-9 ">
                   <div id="chart_plot_01" class="demo-placeholder"></div>
                 </div>
@@ -61,7 +58,6 @@
                     <h2>Top Campaign Performance</h2>
                     <div class="clearfix"></div>
                   </div>
-
                   <div class="col-md-12 col-sm-12 ">
                     <div>
                       <p>Facebook Campaign</p>
@@ -98,19 +94,13 @@
                       </div>
                     </div>
                   </div>
-
                 </div>
-
                 <div class="clearfix"></div>
               </div>
             </div>
-
           </div>
           <br />
-
           <div class="row">
-
-
             <div class="col-md-4 col-sm-4 ">
               <div class="x_panel tile fixed_height_320">
                 <div class="x_title">
@@ -148,7 +138,6 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-
                   <div class="widget_summary">
                     <div class="w_left w_25">
                       <span>0.1.5.3</span>
@@ -213,11 +202,9 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-
                 </div>
               </div>
             </div>
-
             <div class="col-md-4 col-sm-4 ">
               <div class="x_panel tile fixed_height_320 overflow_hidden">
                 <div class="x_title">
@@ -295,8 +282,6 @@
                 </div>
               </div>
             </div>
-
-
             <div class="col-md-4 col-sm-4 ">
               <div class="x_panel tile fixed_height_320">
                 <div class="x_title">
@@ -332,7 +317,6 @@
                       <li><i class="fa fa-area-chart"></i><a href="#">Logout</a>
                       </li>
                     </ul>
-
                     <div class="sidebar-widget">
                         <h4>Profile Completion</h4>
                         <canvas width="150" height="80" id="chart_gauge_01" class="" style="width: 160px; height: 100px;"></canvas>
@@ -346,10 +330,7 @@
                 </div>
               </div>
             </div>
-
           </div>
-
-
           <div class="row">
             <div class="col-md-4 col-sm-4 ">
               <div class="x_panel">
@@ -372,7 +353,6 @@
                 </div>
                 <div class="x_content">
                   <div class="dashboard-widget-content">
-
                     <ul class="list-unstyled timeline widget">
                       <li>
                         <div class="block">
@@ -435,14 +415,8 @@
                 </div>
               </div>
             </div>
-
-
             <div class="col-md-8 col-sm-8 ">
-
-
-
               <div class="row">
-
                 <div class="col-md-12 col-sm-12 ">
                   <div class="x_panel">
                     <div class="x_title">
@@ -466,7 +440,6 @@
                       <div class="dashboard-widget-content">
                         <div class="col-md-4 hidden-small">
                           <h2 class="line_30">125.7k Views from 60 countries</h2>
-
                           <table class="countries_list">
                             <tbody>
                               <tr>
@@ -497,11 +470,8 @@
                     </div>
                   </div>
                 </div>
-
               </div>
               <div class="row">
-
-
                 <!-- Start to do list -->
                 <div class="col-md-6 col-sm-6 ">
                   <div class="x_panel">
@@ -523,7 +493,6 @@
                       <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-
                       <div class="">
                         <ul class="to_do">
                           <li>
@@ -615,9 +584,7 @@
                           <h3 class="degrees">23</h3>
                         </div>
                       </div>
-
                       <div class="clearfix"></div>
-
                       <div class="row weather-days">
                         <div class="col-sm-2">
                           <div class="daily-weather">
@@ -671,7 +638,6 @@
                       </div>
                     </div>
                   </div>
-
                 </div>
                 <!-- end of weather widget -->
               </div>

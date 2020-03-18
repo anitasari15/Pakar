@@ -17,6 +17,7 @@
                           <th> Kategori Gejala </th>
                           <th> Nilai Gejala </th>
                           <th> CF Gejala </th>
+                          <th> Tingkat Gejala </th>
                           <th> Aksi </th>
                         </tr>
                       </thead>
@@ -29,6 +30,7 @@
                         <td><?php echo $row->kategori_gejala;?> </td>
                         <td><?php echo $row->nilai_gejala;?> </td>
                         <td><?php echo $row->cf_gejala;?> </td>
+                        <td><?php echo $row->gejala;?> </td>
                         <td>
                           <center>
                             <div>
@@ -79,9 +81,19 @@
             <div class='col-md-9'><input type="text" name="nilai_gejala" autocomplete="off" required placeholder="Masukkan Nilai Gejala" class="form-control" ></div>
           </div>
           <br>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class='col-md-9'>CF Gejala</label>
             <div class='col-md-9'><input type="text" name="cf_gejala" autocomplete="off" required placeholder="Masukkan CF Gejala" class="form-control" ></div>
+          </div> -->
+          <div class="form-group">
+            <label class="col-md-9">Nilai CF</label>
+              <div class="col-md-9">
+                <select name="cf_gejala" class="form-control form-control-line">
+                  <option value=0.4>Sedikit Yakin</option>
+                  <option value=0.6>Cukup Yakin</option>
+                  <option value=0.8>Yakin</option>
+                </select>
+              </div>
           </div>
           <br>
         </div>
@@ -131,10 +143,21 @@
             <div class='col-md-9'><input type="text" name="nilai_gejala" autocomplete="off" value="<?=$row->nilai_gejala;?>" required placeholder="Masukkan Nilai Gejala" class="form-control" ></div>
           </div>
         <br>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class='col-md-9'>Nilai CF Gejala</label>
             <div class='col-md-9'><input type="text" name="cf_gejala" autocomplete="off" value="<?=$row->cf_gejala;?>" required placeholder="Masukkan Nilai CF Gejala" class="form-control" ></div>
-          </div>
+          </div> -->
+          <?php if ($row->cf_gejala != '') {  ?>
+          <div class="form-group">
+            <label class='col-md-9'>Nilai CF</label>
+                <select class="form-control" name="cf_gejala" placeholder="Isi Nilai CF" required>
+                  <option value="">Nilai CF</option>
+                  <option value=0.4 <?php echo ($row->cf_gejala == 0.4 ? 'selected' : '');?>>Sedikit Yakin</option>
+                  <option value=0.6 <?php echo ($row->cf_gejala == 0.6 ? 'selected' : '');?>>Cukup Yakin</option>
+                  <option value=0.8 <?php echo ($row->cf_gejala == 0.8 ? 'selected' : '');?>>Yakin</option>
+                      </select>
+                  </div>
+                <?php } ?>
           <br>
         </div>
         <div class="modal-footer">

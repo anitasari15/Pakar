@@ -1196,7 +1196,7 @@
 			
 					if ( col.mData === i ) {
 						var sort = a( cell, 'sort' ) || a( cell, 'order' );
-						var filter = a( cell, 'filter' ) || a( cell, 'search' );
+						var filter = a( cell, 'filter' ) || a( cell, 'cari' );
 			
 						if ( sort !== null || filter !== null ) {
 							col.mData = {

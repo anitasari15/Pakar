@@ -23,6 +23,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ")->result(),
             // "judul"=>"Pertanyaan",
         );
+
+        for ($i=0; $i < count($data['all']); $i++) { 
+            $nilai = $data['all'][$i]->cf_gejala;
+            if ($nilai == 0.4) {
+                $data['all'][$i]->gejala = "Sedikit Yakin";
+            } elseif ($nilai == 0.6) {
+                $data['all'][$i]->gejala = "Cukup Yakin";
+            } elseif ($nilai == 0.8) {
+                $data['all'][$i]->gejala = "Yakin";
+            } else {
+                $data['all'][$i]->gejala = "";
+            }
+        }
+
         $this->load->view('template/index');
 		$this->load->view('admin/viewKategoriGejala', $data);
 		$this->load->view('template/footerindex');

@@ -24,13 +24,11 @@
                     <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
-                          <th> Id User </th>
+                          <th> No </th>
                           <th> Nama </th>
-                          <th> Tanggal Lahir </th>
-                          <th> Alamat </th>
-                          <th> No Telephone </th>
                           <th> Username </th>
                           <th> Password </th>
+                          <th> Level </th>
                           <th> Aksi </th>
                         </tr>
                       </thead>
@@ -39,11 +37,9 @@
                   <tr>  
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $row->nama;?> </td>
-                        <td><?php echo $row->tgl_lahir;?> </td>
-                        <td><?php echo $row->alamat;?></td>
-                        <td><?php echo $row->no_telp ;?></td>
                         <td><?php echo $row->username ;?></td>
                         <td><?php echo $row->password; ?></td>
+                        <td><?php echo $row->level; ?></td>
                         <td>
                           <center>
                             <div>
@@ -71,32 +67,32 @@
         <div class="modal-body">
           
           <div class="form-group">
-            <label class='col-md-3'>Nama</label>
+            <label class='col-md-9'>Nama</label>
             <div class='col-md-9'><input type="text" name="nama" autocomplete="off" required placeholder="Masukkan Nama" class="form-control" ></div>
           </div>
-          <br>
+          <br><!-- 
           <div class="form-group">
-            <label class='col-md-3'>Tanggal Lahir</label>
+            <label class='col-md-9'>Tanggal Lahir</label>
             <div class='col-md-9'><input type="date" name="tgl_lahir" autocomplete="off" required placeholder="Masukkan Tanggal Lahir" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-3'>Alamat</label>
+            <label class='col-md-9'>Alamat</label>
             <div class='col-md-9'><input type="text" name="alamat" autocomplete="off" required placeholder="Masukkan Alamat" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-3'>No Telepon</label>
+            <label class='col-md-9'>No Telepon</label>
             <div class='col-md-9'><input type="text" name="no_telp" autocomplete="off" required placeholder="Masukkan No Telepon" class="form-control" ></div>
-          </div>
+          </div> -->
           <br>
           <div class="form-group">
-            <label class='col-md-3'>Username</label>
+            <label class='col-md-9'>Username</label>
             <div class='col-md-9'><input type="text" name="username" autocomplete="off" required placeholder="Masukkan Username" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-3'>Password</label>
+            <label class='col-md-9'>Password</label>
             <div class='col-md-9'><input type="password" name="password" autocomplete="off" required placeholder="Masukkan Password" class="form-control" ></div>
           </div>
         </div>
@@ -122,32 +118,32 @@
  
           <input type="hidden" readonly value="<?=$row->id_user;?>" name="id_user" class="form-control" >
           <div class="form-group">
-            <label class='col-md-3'>Nama</label>
+            <label class='col-md-9'>Nama</label>
             <div class='col-md-9'><input type="text" name="nama" autocomplete="off" value="<?=$row->nama;?>" required placeholder="Masukkan Nama" class="form-control" ></div>
           </div>
-          <br>
+          <br><!-- 
           <div class="form-group">
-            <label class='col-md-3'>Tanggal Lahir</label>
+            <label class='col-md-9'>Tanggal Lahir</label>
             <div class='col-md-9'><input type="date" name="tgl_lahir" autocomplete="off" value="<?=$row->tgl_lahir;?>" required placeholder="Masukkan Tanggal Lahir" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-3'>Alamat</label>
+            <label class='col-md-9'>Alamat</label>
             <div class='col-md-9'><input type="text" name="alamat" autocomplete="off" value="<?=$row->alamat;?>" required placeholder="Masukkan Alamat" class="form-control" ></div>
           </div>
+          <br> -->
+          <!-- <div class="form-group">
+            <label class='col-md-9'>Level</label>
+            <div class='col-md-9'><input type="text" name="level" autocomplete="off" value="<?=$row->level;?>" required placeholder="Masukkan No Telephone" class="form-control" ></div>
+          </div> -->
           <br>
           <div class="form-group">
-            <label class='col-md-3'>No Telephone</label>
-            <div class='col-md-9'><input type="text" name="no_telp" autocomplete="off" value="<?=$row->no_telp;?>" required placeholder="Masukkan No Telephone" class="form-control" ></div>
-          </div>
-          <br>
-          <div class="form-group">
-            <label class='col-md-3'>Username</label>
+            <label class='col-md-9'>Username</label>
             <div class='col-md-9'><input type="text" name="username" autocomplete="off" value="<?=$row->username;?>" required placeholder="Masukkan Username" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-3'>Password</label>
+            <label class='col-md-9'>Password</label>
             <div class='col-md-9'><input type="password" name="password" autocomplete="off" value="<?=$row->password;?>" required placeholder="Masukkan Password" class="form-control" ></div>
           </div>
           <br>

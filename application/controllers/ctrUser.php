@@ -16,7 +16,7 @@ class ctrUser extends CI_Controller
 	public function index(){
 		$data=array(
             // "content"=>'Tampil_Modal',
-            "all"=>$this->db->get('user')->result(),
+            "all"=>$this->db->get('tb_user')->result(),
             // "judul"=>"Modal",
         );
 		$this->load->view('template/index');
@@ -33,14 +33,14 @@ class ctrUser extends CI_Controller
         }else{
             $data=array(
                 "nama"=>$_POST['nama'],
-                "tgl_lahir"=>$_POST['tgl_lahir'],
-                "alamat"=>$_POST['alamat'],
-                "no_telp"=>$_POST['no_telp'],
+                // "tgl_lahir"=>$_POST['tgl_lahir'],
+                // "alamat"=>$_POST['alamat'],
+                // "no_telp"=>$_POST['no_telp'],
                 "username"=>$_POST['username'],
-                "password"=>$_POST['password'],
+                "password"=>encrypt($_POST['password']),
                 "level"=>'2'
             );
-            $this->db->insert('user',$data);
+            $this->db->insert('tb_user',$data);
             $this->session->set_flashdata('sukses',"Data Berhasil Disimpan");
             redirect('ctrUser');
         }
@@ -55,14 +55,14 @@ class ctrUser extends CI_Controller
         }else{
             $data=array(
                 "nama"=>$_POST['nama'],
-                "tgl_lahir"=>$_POST['tgl_lahir'],
-                "alamat"=>$_POST['alamat'],
-                "no_telp"=>$_POST['no_telp'],
+                // "tgl_lahir"=>$_POST['tgl_lahir'],
+                // "alamat"=>$_POST['alamat'],
+                // "no_telp"=>$_POST['no_telp'],
                 "username"=>$_POST['username'],
                 "password"=>$_POST['password'],
             );
             $this->db->where('id_user', $_POST['id_user']);
-            $this->db->update('user',$data);
+            $this->db->update('tb_user',$data);
             $this->session->set_flashdata('sukses',"Data Berhasil Diedit");
             redirect('ctrUser');
         }
@@ -73,7 +73,7 @@ class ctrUser extends CI_Controller
             redirect('ctrUser');
         }else{
             $this->db->where('id_user', $id);
-            $this->db->delete('user');
+            $this->db->delete('tb_user');
             $this->session->set_flashdata('sukses',"Data Berhasil Dihapus");
             redirect('ctrUser');
         }

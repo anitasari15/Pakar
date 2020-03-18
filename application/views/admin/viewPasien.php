@@ -14,16 +14,18 @@
                           <th> No </th>
                           <th> Nama Pasien </th>
                           <th> Alamat Pasien </th>
+                          <th> Tanggal Lahir </th>
                           <th> Tanggal Daftar </th>
                           <th> Aksi </th>
                         </tr>
                       </thead>
                       <tbody>
                       	<?php $no=1; foreach($all as $row): ?>
-                  <tr>  
+                      <tr>  
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $row->nama;?> </td>
                         <td><?php echo $row->alamat;?> </td>
+                        <td><?php echo $row->tgl_lahir;?> </td>
                         <td><?php echo $row->tgl_daftar;?> </td>
                         <td>
                           <center>
@@ -33,7 +35,7 @@
                             </div>
                           </center>
                         </td>
-                  </tr>
+                      </tr>
                   <?php endforeach;?>
                       </tbody>
                     </table>
@@ -59,6 +61,11 @@
           <div class="form-group">
             <label class='col-md-3'>Alamat Pasien</label>
             <div class='col-md-9'><input type="text" name="alamat" autocomplete="off" required placeholder="Masukkan Alamat Pasien" class="form-control" ></div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class='col-md-3'>Tanggal Lahir</label>
+            <div class='col-md-9'><input type="date" name="tgl_lahir" autocomplete="off" required placeholder="Masukkan Tanggal Lahir" class="form-control" ></div>
           </div>
           <br>
         </div>
@@ -91,6 +98,11 @@
           <div class="form-group">
             <label class='col-md-3'>Alamat Pasien</label>
             <div class='col-md-9'><input type="text" name="alamat" autocomplete="off" value="<?=$row->alamat;?>" required placeholder="Masukkan Alamat Pasien" class="form-control" ></div>
+          </div>
+          <br>
+         <div class="form-group">
+            <label class='col-md-3'>Tanggal Lahir</label>
+            <div class='col-md-9'><input type="date" name="tgl_lahir" autocomplete="off" value="<?=$row->tgl_lahir;?>" required placeholder="Masukkan Tanggal Lahir" class="form-control" ></div>
           </div>
         </div>
 

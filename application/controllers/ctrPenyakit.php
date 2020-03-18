@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function index(){
  		$data=array(
             // "content"=>'Tampil_Modal',
-            "all"=>$this->db->get('penyakit')->result(),
+            "all"=>$this->db->get('tb_penyakit')->result(),
             // "judul"=>"Modal",
         );
         $this->load->view('template/index');

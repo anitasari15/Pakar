@@ -79,9 +79,9 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center">
-              <h1 class="mb-4 text-white">Mighty Web Design Agency</h1>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
-              <p><a href="#" class="btn btn-primary btn-outline-white py-3 px-5">Contact Us</a></p>
+              <h1 class="mb-4 text-white">Selamat Datang</h1>
+              <p class="mb-4">Hai Calon Ibu, Ini 7 Kunci Hamil Sehat Sampai Melahirkan.</p>
+              <p><a href="#" class="btn btn-primary btn-outline-white py-3 px-5">Selengkapnya</a></p>
             </div>
           </div>
         </div>

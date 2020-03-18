@@ -12,9 +12,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  {
  	
  	public function index(){
+        $this->db->select('*, DATE_FORMAT(tgl_lahir, "%d %M %Y") as tgl_lahir, DATE_FORMAT(tgl_daftar, "%d %M %Y") as tgl_daftar');
+        $result = $this->db->get('tb_pasien')->result();
  		$data=array(
             // "content"=>'Tampil_Modal',
-            "all"=>$this->db->get('tb_pasien')->result(),
+            "all"=>$result,
             // "judul"=>"Modal",
         );
         $this->load->view('template/index');
@@ -32,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $data=array(
                 "nama"=>$_POST['nama'],
                 "alamat"=>$_POST['alamat'],
-                // "tgl_lahir"=>$_POST['tgl_lahir'],
+                "tgl_lahir"=>$_POST['tgl_lahir'],
             );
             $this->db->insert('tb_pasien',$data);
             $this->session->set_flashdata('sukses',"Data Berhasil Disimpan");
@@ -50,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $data=array(
                 "nama"=>$_POST['nama'],
                 "alamat"=>$_POST['alamat'],
+                "tgl_lahir"=>$_POST['tgl_lahir']
             );
             $this->db->where('id_pasien', $_POST['id_pasien']);
             $this->db->update('tb_pasien',$data);
