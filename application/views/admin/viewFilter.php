@@ -53,17 +53,32 @@
                         </tr>
                       </thead>
                       <tbody>
-                      	<?php $no=1; foreach($all as $row): ?>
-                  <tr>  
+                      	<?php $no=1; foreach($lap_audit as $row){ ?>
+                        <?php $tahun_ini = date("Y"); 
+                              // echo "$tahun_ini";
+                              // $tahun_lahir = date("Y", date($row->umur));
+                              // $tahun_lahir = $row->tgl_lahir;
+                              // echo date("Y", date($tahun_lahir));
+                        ?>
+                         <?php $tahun = date("Y");
+                          $query = $this->db->query("SELECT YEAR(tgl_lahir) as lahir  from tb_pasien")->row();
+                          $tahun_lahir = $query->lahir;
+                          // echo "$query";
+                          $umur = $tahun_ini -  $tahun_lahir;
+                         ?>
+                      <tr>  
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $row->id_konsultasi;?> </td>
-                        <td><?php echo $row->nama;?> </td>
+                        <td><?php echo $row->id_pasien;?> </td>
                         <td><?php echo $row->tanggal_konsultasi; ?></td>
                         <td><?php echo $row->tdd; ?></td>
                         <td><?php echo $row->tds; ?></td>
                         <td><?php echo $row->kbb; ?></td>
                         <td><?php echo $row->uk; ?></td>
-                        <td><?php echo $row->umur; ?></td>
+                        <td>
+                          <?php echo $umur; ?>
+                            
+                          </td>
                         <td><?php echo $row->edema; ?></td>
                         <td><?php echo $row->proteinuria; ?></td>
                         <td><?php echo $row->hasil_konsultasi; ?></td>
@@ -78,7 +93,7 @@
                           </center>
                         </td>
                   </tr>
-                  <?php endforeach;?>
+                  <?php } ?>
                       </tbody>
                     </table>
         </div>
@@ -108,54 +123,21 @@
                     <?php 
                       foreach ($query->result() as $pasien) {
                         ?>
-                        <!-- <option value="">Pilih Nama Pasien</option> -->
-                        <option value="<?php echo $pasien->id_pasien ?>"><?php echo $pasien->nama ?></option>
+                        <option value="<?php echo $pasien->id_pasien ?>"><?php echo $pasien->id_pasien ?></option>
                       <?php } ?>
               </select>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-9'>Tekanan Darah Diastolic (mmHg)</label>
-            <div class='col-md-9'><input type="text" name="tdd" autocomplete="off" required placeholder="Masukkan Tekanan Darah Diastolic" class="form-control" ></div>
+            <label class='col-md-3'>Alamat Pasien</label>
+            <div class='col-md-9'><input type="text" name="alamat" autocomplete="off" required placeholder="Masukkan Alamat Pasien" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-9'>Tekanan Darah Sistolic (mmHg)</label>
-            <div class='col-md-9'><input type="text" name="tds" autocomplete="off" required placeholder="Masukkan Tekanan Darah Sistolic" class="form-control" ></div>
+            <label class='col-md-3'>Tanggal Lahir</label>
+            <div class='col-md-9'><input type="date" name="tgl_lahir" autocomplete="off" required placeholder="Masukkan Tanggal Lahir" class="form-control" ></div>
           </div>
           <br>
-          <div class="form-group">
-            <label class='col-md-9'>Kenaikan Berat Badan (kg)</label>
-            <div class='col-md-9'><input type="text" name="kbb" autocomplete="off" required placeholder="Masukkan Kenaikan Berat Badan" class="form-control" ></div>
-          </div>
-          <br>
-          <div class="form-group">
-            <label class='col-md-9'>Usia Kehamilan (trimester)</label>
-            <div class='col-md-9'><input type="text" name="uk" autocomplete="off" required placeholder="Masukkan Usia Kehamilan" class="form-control" ></div>
-          </div>
-          <br>
-          <div class="form-group">
-            <label class="col-md-9">Edema</label>
-              <div class="col-md-9">
-                <select name="edema" class="form-control form-control-line">
-                  <option value="">Masukkan Edema</option>
-                  <option value="Iya">Punya</option>
-                  <option value="Tidak">Tidak</option>
-                </select>
-              </div>
-          </div>
-          <br>
-          <div class="form-group">
-            <label class="col-md-9">Proteinuria</label>
-              <div class="col-md-9">
-                <select name="proteinuria" class="form-control form-control-line">
-                  <option value="">Masukkan Proteinuria</option>
-                  <option value="Normal">Normal</option>
-                  <option value="Tinggi">Tinggi</option>
-                  <option value="SangatTinggi">Sangat Tinggi</option>
-                </select>
-              </div>
-          </div>
         </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

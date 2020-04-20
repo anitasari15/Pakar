@@ -4,19 +4,40 @@
           <div class="row" style="display: inline-block;" >
           <div class="tile_count">
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-              <div class="count">2500</div>
-              <span class="count_bottom"><i class="green">4% </i> From last Week</span>
+              <span class="count_top"><i class="fa fa-user"></i> Total Pasien</span>
+              <?php 
+                  $query = $this->db->query('SELECT count(nama) as total from tb_pasien')->row();
+                  $tot = $query->total;
+              ?>
+              <div class="count">
+                <?php 
+                echo $tot;
+                 ?>
+              </div>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-              <div class="count">123.50</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+              <span class="count_top"><i class="fa fa-clock-o"></i> Kategori Gejala</span>
+              <?php 
+                  $query = $this->db->query('SELECT count(id_gejala) as total from tb_kategori_gejala')->row();
+                  $tot = $query->total;
+              ?>
+              <div class="count">
+                <?php 
+                echo $tot;
+                 ?>
+              </div>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
-              <div class="count green">2,500</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+              <span class="count_top"><i class="fa fa-user"></i> Rekam Medis</span>
+              <?php 
+                  $query = $this->db->query('SELECT count(id_konsultasi) as total from tb_konsultasi')->row();
+                  $tot = $query->total;
+              ?>
+              <div class="count">
+                <?php 
+                echo $tot;
+                 ?>
+              </div>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
@@ -644,4 +665,4 @@
             </div>
           </div>
         </div>
-        <!-- /page content -->
+        <!-- /page content

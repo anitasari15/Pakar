@@ -4,14 +4,14 @@ class User extends CI_Model {
 
 	public function get_user(){
 		$this->db->select('*');
-		$this->db->from('user');
+		$this->db->from('tb_user');
 		return $this->db->get()->result();
 	}
 
 	public function get_file($id_user)
 	{
 		$this->db->select('*');
-		$this->db->from('user');
+		$this->db->from('tb_user');
 		$this->db->where('id_user', $id_user);
 		return $this->db->get()->result();
 	}
@@ -59,7 +59,7 @@ class User extends CI_Model {
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
 
-		$result = $this->db->get('user');
+		$result = $this->db->get('tb_user');
 
 		if ($result->num_rows() == 1) {
 			return $result->row(0)->id_user;

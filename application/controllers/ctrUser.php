@@ -37,7 +37,7 @@ class ctrUser extends CI_Controller
                 // "alamat"=>$_POST['alamat'],
                 // "no_telp"=>$_POST['no_telp'],
                 "username"=>$_POST['username'],
-                "password"=>encrypt($_POST['password']),
+                "password"=>md5($_POST['password']),
                 "level"=>'2'
             );
             $this->db->insert('tb_user',$data);
@@ -59,7 +59,7 @@ class ctrUser extends CI_Controller
                 // "alamat"=>$_POST['alamat'],
                 // "no_telp"=>$_POST['no_telp'],
                 "username"=>$_POST['username'],
-                "password"=>$_POST['password'],
+                "password"=>md5($_POST['password'])
             );
             $this->db->where('id_user', $_POST['id_user']);
             $this->db->update('tb_user',$data);

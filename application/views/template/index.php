@@ -111,8 +111,7 @@
                     <img src="<?php echo base_url() ?>assets/new/images/img.jpg" alt=""><?php echo $this->session->userdata('nama') ;?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="<
-                    ?php echo site_url() ?>/ctrLogin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    <a class="dropdown-item"  href="<?php echo site_url() ?>/ctrLogin/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
                   </ul>
