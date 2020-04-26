@@ -81,12 +81,12 @@
                   </li>
                   <li><a href="<?php echo site_url() ?>/ctrPasien"><i class="fa fa-user"></i> Pasien </a>
                   </li>
-                  <li><a href="<?php echo site_url() ?>/ctrKategori"><i class="fa fa-user"></i> Kategori Gejala </a>
-                  </li>
                   <li><a href="<?php echo site_url() ?>/ctrGejala"><i class="fa fa-folder"></i> Gejala </a>
                   </li>
-                  <li><a href="<?php echo site_url() ?>/ctrAturan"><i class="fa fa-table"></i> Aturan </span></a>
+                  <li><a href="<?php echo site_url() ?>/ctrKategori"><i class="fa fa-user"></i> Kategori Gejala </a>
                   </li>
+                  <!-- <li><a href="<?php echo site_url() ?>/ctrAturan"><i class="fa fa-table"></i> Aturan </span></a>
+                  </li> -->
                   <li><a href="<?php echo site_url() ?>/ctrDataKonsul"><i class="fa fa-bar-chart-o"></i> Rekam Medik </a>
                   </li>
                 </ul>

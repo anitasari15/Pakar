@@ -4,7 +4,7 @@
             <h4 class="card-title">Data Konsultasi</h4>
             <!-- <button><?php echo anchor('ctrGejala/tbhGejala','Tambah Data', array('class' => 'btn btn-sm btn-info')); ?></button> -->
 
-<form action="<?php echo site_url('ctrDataKonsul/laporan');?>" method="post">
+<!-- <form action="<?php echo site_url('ctrDataKonsul/laporan');?>" method="post">
   <select style="margin-left: 100px; width: 100px; height: 30px" name="bulan" required>
     <option selected="selected" value="">Bulan</option>
     <?php
@@ -29,7 +29,7 @@
 
    <button class="btn btn-primary" type="Submit" name="tampil" value="tampilkan">Submit</button>
    <button class="btn btn-danger" type="Submit" name="tampil" value="download"><span class="glyphicon glyphicon-download-alt"> Download</span></button>
- </form>
+ </form> -->
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="fa fa-plus-circle"></i> Tambah </button>
                     <table id="datatable" class="table table-bordered table-responsive">
@@ -39,13 +39,13 @@
                           <th> Id Konsultasi </th>
                           <th> Nama Pasien </th>
                           <th> Tanggal Konsultasi </th>
-                          <th> Tekanan Darah Sistolic (mmHg)</th>
+                          <!-- <th> Tekanan Darah Sistolic (mmHg)</th>
                           <th> Tekanan Darah Diastolic </th>
                           <th> Kenaikan Berat Badan </th>
                           <th> Usia Kehamilan </th>
                           <th> Usia Ibu </th>
                           <th> Edema </th>
-                          <th> Proteinuria </th>
+                          <th> Proteinuria </th> -->
                           <th> Hasil Konsultasi </th>
                           <th> Presentase </th>
                           <th> Solusi </th>
@@ -59,13 +59,13 @@
                         <td><?php echo $row->id_konsultasi;?> </td>
                         <td><?php echo $row->nama;?> </td>
                         <td><?php echo $row->tanggal_konsultasi; ?></td>
-                        <td><?php echo $row->tdd; ?></td>
+                        <!-- <td><?php echo $row->tdd; ?></td>
                         <td><?php echo $row->tds; ?></td>
                         <td><?php echo $row->kbb; ?></td>
                         <td><?php echo $row->uk; ?></td>
                         <td><?php echo $row->umur; ?></td>
                         <td><?php echo $row->edema; ?></td>
-                        <td><?php echo $row->proteinuria; ?></td>
+                        <td><?php echo $row->proteinuria; ?></td> -->
                         <td><?php echo $row->hasil_konsultasi; ?></td>
                         <td><?php echo $row->persentase; ?></td>
                         <td><?php echo $row->solusi; ?></td>
@@ -115,6 +115,27 @@
           </div>
           <br>
           <div class="form-group">
+            <label class="col-md-9">Hasil</label>
+              <div class="col-md-9">
+                <select name="hasil_konsultasi" class="form-control form-control-line">
+                  <option value="">Masukkan Hasil</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Sedang">Sedang</option>
+                  <option value="Tinggi">Tinggi</option>
+                </select>
+              </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class='col-md-9'>Presentase</label>
+            <div class='col-md-9'><input type="text" name="persentase" autocomplete="off" required placeholder="Masukkan Presentase" class="form-control" ></div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class='col-md-9'>Solusi</label>
+            <div class='col-md-9'><input type="text" name="solusi" autocomplete="off" required placeholder="Masukkan solusi" class="form-control" ></div>
+          </div>
+          <!-- <div class="form-group">
             <label class='col-md-9'>Tekanan Darah Diastolic (mmHg)</label>
             <div class='col-md-9'><input type="text" name="tdd" autocomplete="off" required placeholder="Masukkan Tekanan Darah Diastolic" class="form-control" ></div>
           </div>
@@ -130,10 +151,15 @@
           </div>
           <br>
           <div class="form-group">
-            <label class='col-md-9'>Usia Kehamilan (trimester)</label>
+            <label class='col-md-9'>Usia Kehamilan (minggu)</label>
             <div class='col-md-9'><input type="text" name="uk" autocomplete="off" required placeholder="Masukkan Usia Kehamilan" class="form-control" ></div>
           </div>
           <br>
+          <br>
+          <div class="form-group">
+            <label class='col-md-9'>Usia Ibu (Tahun) </label>
+            <div class='col-md-9'><input type="text" name="ui" autocomplete="off" required placeholder="Masukkan Usia Ibu" class="form-control" ></div>
+          </div>
           <div class="form-group">
             <label class="col-md-9">Edema</label>
               <div class="col-md-9">
@@ -155,7 +181,7 @@
                   <option value="SangatTinggi">Sangat Tinggi</option>
                 </select>
               </div>
-          </div>
+          </div> -->
         </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
