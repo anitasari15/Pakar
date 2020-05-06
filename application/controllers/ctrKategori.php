@@ -18,10 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	public function index(){
  		$data=array(
-            // "content"=>'Tambah Pertanyaan',
-            "all"=>$this->db->query(" SELECT tb_kategori_gejala.*, tb_gejala.*FROM tb_kategori_gejala INNER JOIN tb_gejala ON tb_kategori_gejala.id_gejala=tb_gejala.id_gejala
-")->result(),
-            // "judul"=>"Pertanyaan",
+            "all"=>$this->db->query(" SELECT tb_kategori_gejala.*, tb_gejala.*FROM tb_kategori_gejala INNER JOIN tb_gejala ON tb_kategori_gejala.id_gejala=tb_gejala.id_gejala")->result(),
         );
 
         for ($i=0; $i < count($data['all']); $i++) { 
@@ -36,6 +33,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $data['all'][$i]->gejala = "";
             }
         }
+
+        // akan dimasukkan kedalam <select> dan <input>
+        $data['gejalas'] = json_encode($this->getGejala());
 
         $this->load->view('template/index');
 		$this->load->view('admin/viewKategoriGejala', $data);
@@ -91,5 +91,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->session->set_flashdata('sukses',"Data Berhasil Dihapus");
             redirect('ctrKategori');
         }
+    }
+
+    public function getGejala(){
+        $this->db->select('g.id_gejala, g.nama_gejala, GROUP_CONCAT(kg.kategori_gejala) as kategori, GROUP_CONCAT(kg.nilai_gejala) as nilai, GROUP_CONCAT(kg.cf_gejala) as cf');
+        $this->db->join('tb_kategori_gejala kg', 'kg.id_gejala=g.id_gejala', 'left');
+        $this->db->group_by('kg.id_gejala');
+        $query = $this->db->get('tb_gejala g');
+        return $query->result();
     }
  }

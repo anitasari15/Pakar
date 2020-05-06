@@ -35,6 +35,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 "nama"=>$_POST['nama'],
                 "alamat"=>$_POST['alamat'],
                 "tgl_lahir"=>$_POST['tgl_lahir'],
+                "username"=>$_POST['username'],
+                "password"=>md5($_POST['password']),
+                "level"=>'2'
             );
             $this->db->insert('tb_pasien',$data);
             $this->session->set_flashdata('sukses',"Data Berhasil Disimpan");

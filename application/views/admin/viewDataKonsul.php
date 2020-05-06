@@ -31,7 +31,7 @@
    <button class="btn btn-danger" type="Submit" name="tampil" value="download"><span class="glyphicon glyphicon-download-alt"> Download</span></button>
  </form> -->
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="fa fa-plus-circle"></i> Tambah </button>
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="fa fa-plus-circle"></i> Tambah </button> -->
                     <table id="datatable" class="table table-bordered table-responsive">
                       <thead>
                         <tr>
@@ -90,8 +90,9 @@
       <form action="<?php echo site_url('ctrDataKonsul/tbhKonsul'); ?>" method="post">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <a class="modal-title">Tambah Data</a>
+          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Data</h5>
+          <button type="button" class="close" data-dismiss="modal" arial-label="close">
+            <span area-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
           
@@ -135,7 +136,7 @@
             <label class='col-md-9'>Solusi</label>
             <div class='col-md-9'><input type="text" name="solusi" autocomplete="off" required placeholder="Masukkan solusi" class="form-control" ></div>
           </div>
-          <!-- <div class="form-group">
+          <div class="form-group">
             <label class='col-md-9'>Tekanan Darah Diastolic (mmHg)</label>
             <div class='col-md-9'><input type="text" name="tdd" autocomplete="off" required placeholder="Masukkan Tekanan Darah Diastolic" class="form-control" ></div>
           </div>
@@ -181,7 +182,7 @@
                   <option value="SangatTinggi">Sangat Tinggi</option>
                 </select>
               </div>
-          </div> -->
+          </div>
         </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

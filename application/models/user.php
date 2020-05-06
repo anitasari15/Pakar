@@ -68,4 +68,25 @@ class User extends CI_Model {
 		}
 	}
 
+	public function get_files($id_pasien)
+	{
+		$this->db->select('*');
+		$this->db->from('tb_pasien');
+		$this->db->where('id_pasien', $id_pasien);
+		return $this->db->get()->result();
+	}
+
+	public function loginn($username, $password){
+		$this->db->where('username', $username);
+		$this->db->where('password', $password);
+
+		$result = $this->db->get('tb_pasien');
+
+		if ($result->num_rows() == 1) {
+			return $result->row(0)->id_pasien;
+		} else {
+			return false;
+		}
+	}
+
 }

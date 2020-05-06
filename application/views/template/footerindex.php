@@ -9,7 +9,9 @@
       </div>
     </div>
 
+
     <!-- jQuery -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script> -->
     <script src="<?php echo base_url() ?>assets/new/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="<?php echo base_url() ?>assets/new/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

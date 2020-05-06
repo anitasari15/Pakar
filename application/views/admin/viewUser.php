@@ -144,7 +144,7 @@
           <br>
           <div class="form-group">
             <label class='col-md-9'>Password</label>
-            <div class='col-md-9'><input type="text" name="password" autocomplete="off" value="<?=encrypt($row->password);?>" required placeholder="Masukkan Password" class="form-control" ></div>
+            <div class='col-md-9'><input type="password" name="password" autocomplete="off" value="" required placeholder="Masukkan Password" class="form-control" ></div>
           </div>
           <br>
         </div>

@@ -5,7 +5,7 @@
 <div class="col-sm-10 right_col grid-margin stretch-card">
 	<div class="card">
 		<div class="card-body">
-            <h4 class="card-title">Gejala Table</h4>
+            <h4 class="card-title">Tabel Gejala</h4>
             <!-- <button><?php echo anchor('ctrGejala/tbhGejala','Tambah Data', array('class' => 'btn btn-sm btn-info')); ?></button> -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="fa fa-plus-circle"></i> Tambah </button>
                     <table id="datatable" class="table table-bordered">
@@ -44,8 +44,9 @@
       <form action="<?php echo site_url('ctrGejala/tbhGejala'); ?>" method="post">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <a class="modal-title">Tambah Data</a>
+          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Data</h5>
+          <button type="button" class="close" data-dismiss="modal" arial-label="close">
+            <span area-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
           
@@ -75,8 +76,9 @@
     <form action="<?php echo site_url('ctrGejala/edit'); ?>" method="post">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Data</h4>
+          <h5 class="modal-title" id="exampleModalLongTitle">Edit Data</h5>
+          <button type="button" class="close" data-dismiss="modal" arial-label="close">
+            <span area-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
  
