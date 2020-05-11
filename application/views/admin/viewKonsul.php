@@ -5,7 +5,7 @@
 		</div>
 
 		<div>
-			<form method="POST"  action="<?php echo site_url('ctrDataKonsul/tbhKonsul'); ?>">
+			<form method="POST"  action="<?php echo site_url('ctrkonsul/hitung'); ?>">
             <div class="form-group">
             	<label class='col-md-9'>Nama Pasien</label>
             	<div class='col-md-9'>
