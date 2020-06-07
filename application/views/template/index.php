@@ -41,6 +41,8 @@
     <!-- bootstrap-daterangepicker -->
     <link href="<?php echo base_url() ?>assets/new/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/collapse.css">
+
     <!-- Custom Theme Style -->
     <link href="<?php echo base_url() ?>assets/new/build/css/custom.min.css" rel="stylesheet">
   </head>

@@ -30,9 +30,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		} else {
 			$username = $this->input->post('username');
 			$password = md5($this->input->post('password'));
-			// $level = 2;
-
-
 
 			$id_user = $this->user->login($username, $password);
 			// var_dump($level); 

@@ -40,6 +40,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		$this->load->view('template/footerindex');
  	}
 
+    public function edit(){
+        $data = array(
+            'solusi' => $_POST['solusi']
+        );
+
+        $this->db->where('id_konsultasi', $_POST['id_konsultasi']);
+        $this->db->update('tb_konsultasi',$data);
+        $this->session->set_flashdata('sukses',"Data Berhasil Diedit");
+        redirect('ctrDataKonsul');
+    }
+
  	public function tbhKonsul(){
  		$this->load->library('form_validation');
         $this->form_validation->set_rules('id_pasien', 'id_pasien', 'required');

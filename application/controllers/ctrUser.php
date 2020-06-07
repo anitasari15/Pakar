@@ -32,10 +32,7 @@ class ctrUser extends CI_Controller
             redirect('ctrUser');
         }else{
             $data=array(
-                "nama"=>$_POST['nama'],
-                // "tgl_lahir"=>$_POST['tgl_lahir'],
-                // "alamat"=>$_POST['alamat'],
-                // "no_telp"=>$_POST['no_telp'],
+                "nama"=>$_POST['nama']
                 "username"=>$_POST['username'],
                 "password"=>md5($_POST['password']),
                 "level"=>'2'

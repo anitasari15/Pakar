@@ -5,7 +5,9 @@
 		</div>
 
 		<div>
-			<form method="POST"  action="<?php echo site_url('ctrkonsul/hitung'); ?>">
+			<!-- <form method="POST"  action="<?php echo site_url('ctrkonsul/hitung'); ?>"> -->
+      <form method="POST"  action="<?php echo site_url('test'); ?>">
+          <input type="text" value="<?php echo (int)$terakhir->id_konsultasi+1; ?>" name="id_konsultasi" hidden>
             <div class="form-group">
             	<label class='col-md-9'>Nama Pasien</label>
             	<div class='col-md-9'>
@@ -24,33 +26,33 @@
           	</div>
           	<div class="form-group">
             <label class='col-md-9'>Tekanan Darah Diastolic (mmHg)</label>
-            <div class='col-md-9'><input type="text" name="tdd" autocomplete="off" required placeholder="Masukkan Tekanan Darah Diastolic" class="form-control" ></div>
+            <div class='col-md-9'><input type="text" name="TDD" autocomplete="off" required placeholder="Masukkan Tekanan Darah Diastolic" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
             <label class='col-md-9'>Tekanan Darah Sistolic (mmHg)</label>
-            <div class='col-md-9'><input type="text" name="tds" autocomplete="off" required placeholder="Masukkan Tekanan Darah Sistolic" class="form-control" ></div>
+            <div class='col-md-9'><input type="text" name="TDS" autocomplete="off" required placeholder="Masukkan Tekanan Darah Sistolic" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
             <label class='col-md-9'>Kenaikan Berat Badan (kg)</label>
-            <div class='col-md-9'><input type="text" name="kbb" autocomplete="off" required placeholder="Masukkan Kenaikan Berat Badan" class="form-control" ></div>
+            <div class='col-md-9'><input type="text" name="KBB" autocomplete="off" required placeholder="Masukkan Kenaikan Berat Badan" class="form-control" ></div>
           </div>
           <br>
           <div class="form-group">
             <label class='col-md-9'>Usia Kehamilan (minggu)</label>
-            <div class='col-md-9'><input type="text" name="uk" autocomplete="off" required placeholder="Masukkan Usia Kehamilan" class="form-control" ></div>
+            <div class='col-md-9'><input type="text" name="UK" autocomplete="off" required placeholder="Masukkan Usia Kehamilan" class="form-control" ></div>
           </div>
           <br>
           <br>
           <div class="form-group">
             <label class='col-md-9'>Usia Ibu (Tahun) </label>
-            <div class='col-md-9'><input type="text" name="ui" autocomplete="off" required placeholder="Masukkan Usia Ibu" class="form-control" ></div>
+            <div class='col-md-9'><input type="text" name="UI" autocomplete="off" required placeholder="Masukkan Usia Ibu" class="form-control"  ></div>
           </div>
           <div class="form-group">
             <label class="col-md-9">Edema</label>
               <div class="col-md-9">
-                <select name="edema" class="form-control form-control-line">
+                <select name="EDEMA" class="form-control form-control-line">
                   <option value="">Masukkan Edema</option>
                   <option value="Iya">Punya</option>
                   <option value="Tidak">Tidak</option>
@@ -61,7 +63,7 @@
           <div class="form-group">
             <label class="col-md-9">Proteinuria</label>
               <div class="col-md-9">
-                <select name="proteinuria" class="form-control form-control-line">
+                <select name="PROTEINURIA" class="form-control form-control-line">
                   <option value="">Masukkan Proteinuria</option>
                   <option value="Normal">Normal</option>
                   <option value="Tinggi">Tinggi</option>
