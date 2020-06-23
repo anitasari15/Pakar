@@ -20,4 +20,12 @@ class ctrProfil extends CI_Controller
 		$this->load->view('pasien/profil',$data);
 		$this->load->view('template/footer');
 	}
+
+	// public function detail(){
+	// 	$data['data'] = $this->dataProfil->get_pasien($id);
+
+ //        $this->load->view('pasien/riwayat',$data);
+ //        // $this->load->view('admin/detailkonsul',$data);
+ //        // $this->load->view('template/footerindex');
+	// }
 }

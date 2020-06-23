@@ -12,11 +12,11 @@
         <thead>
           <tr>
             <th> No </th>
-            <th> Id Kategori </th>
+            <!-- <th> Id Kategori </th> -->
             <th> Nama Gejala </th>
             <th> Kategori Gejala </th>
-            <th> Nilai Gejala </th>
-            <th> Label </th>
+            <!-- <th> Nilai Gejala </th>
+            <th> Label </th> -->
             <th> CF Gejala </th>
             <th> Tingkat Gejala </th>
             <th> Aksi </th>
@@ -26,11 +26,11 @@
          <?php $no=1; foreach($all as $row): ?>
          <tr>  
           <td><?php echo $no++; ?></td>
-          <td><?php echo $row->id_kategori_gejala;?> </td>
+          <!-- <td><?php echo $row->id_kategori_gejala;?> </td> -->
           <td><?php echo $row->nama_gejala;?> </td>
           <td><?php echo $row->kategori_gejala;?> </td>
-          <td><?php echo $row->nilai_gejala;?> </td>
-          <td><?php echo $row->label_gejala;?></td>
+          <!-- <td><?php echo $row->nilai_gejala;?> </td>
+          <td><?php echo $row->label_gejala;?></td> -->
           <td><?php echo $row->cf_gejala;?> </td>
           <td><?php echo $row->gejala;?> </td>
           <td>

@@ -32,11 +32,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             redirect('ctrPasien');
         }else{
             $data=array(
+                "nik"=>$_POST['nik'],
                 "nama"=>$_POST['nama'],
                 "alamat"=>$_POST['alamat'],
                 "tgl_lahir"=>$_POST['tgl_lahir'],
-                "username"=>$_POST['username'],
-                "password"=>md5($_POST['password']),
+                "username"=>$_POST['nik'],
+                "password"=>md5($_POST['nik']),
                 "level"=>'2'
             );
             $this->db->insert('tb_pasien',$data);

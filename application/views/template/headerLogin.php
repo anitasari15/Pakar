@@ -22,19 +22,19 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login-pakar"><i class="fa fa-plus"></i> Login Pakar </button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login-pasien"><i class="fa fa-plus"></i> Login Pasien </button>
       <form method="post" action="<?php echo base_url('index.php/ctrLogin/cekLogin') ?>">
-        <!-- <p><input type="text" name="username" value="" placeholder="Username"></p>
+        <p><input type="text" name="username" value="" placeholder="Username"></p>
         <p><input type="password" name="password" value="" placeholder="Password"></p>
-        <div>
+        <!-- <div>
         <select name="level" class="form-control">
           <option >Pilih Jenis User</option>
           <option name="user" value="user">User</option>
           <option name="petugas" value="petugas">Petugas</option>
         </select>
-      </div>
+      </div> -->
         <p class="remember_me">
         </p>
-        <p class="submit"><input type="submit" name="submit" value="Login"></p> -->
-        <p>Don’t have an account? <a href="<?php echo site_url()?>/ctrRegis">Sign up now</a></p>
+        <p class="submit"><input type="submit" name="submit" value="Login"></p>
+        <!-- <p>Don’t have an account? <a href="<?php echo site_url()?>/ctrRegis">Sign up now</a></p> -->
         <p>Back to home? <a href="<?php echo site_url()?>/welcome">Home</a></p>
       </form>
     </div>
@@ -49,7 +49,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <a class="modal-title">Tambah Data</a>
+          <a class="modal-title">Login Petugas</a>
         </div>
         <div class="modal-body">
           
@@ -85,7 +85,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <a class="modal-title">Tambah Data</a>
+          <a class="modal-title">Login Pasien</a>
         </div>
         <div class="modal-body">
           

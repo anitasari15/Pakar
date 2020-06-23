@@ -12,6 +12,7 @@
                       <thead>
                         <tr>
                           <th> No </th>
+                          <th> NIK </th>
                           <th> Nama Pasien </th>
                           <th> Alamat Pasien </th>
                           <th> Tanggal Lahir </th>
@@ -25,6 +26,7 @@
                       	<?php $no=1; foreach($all as $row): ?>
                       <tr>  
                         <td><?php echo $no++; ?></td>
+                        <td><?php echo $row->nik; ?></td>
                         <td><?php echo $row->nama;?> </td>
                         <td><?php echo $row->alamat;?> </td>
                         <td><?php echo $row->tgl_lahir;?> </td>
@@ -59,6 +61,9 @@
         <div class="modal-body">
           
           <div class="form-group">
+            <label class='col-md-3'>NIK Pasien</label>
+            <div class='col-md-9'><input type="text" name="nik" autocomplete="off" required placeholder="Masukkan NIK Pasien" class="form-control" ></div>
+          </div><div class="form-group">
             <label class='col-md-3'>Nama Pasien</label>
             <div class='col-md-9'><input type="text" name="nama" autocomplete="off" required placeholder="Masukkan Nama Pasien" class="form-control" ></div>
           </div>
@@ -73,7 +78,7 @@
             <div class='col-md-9'><input type="date" name="tgl_lahir" autocomplete="off" required placeholder="Masukkan Tanggal Lahir" class="form-control" ></div>
           </div>
           <br>
-           <div class="form-group">
+          <!--  <div class="form-group">
             <label class='col-md-9'>Username</label>
             <div class='col-md-9'><input type="text" name="username" autocomplete="off" required placeholder="Masukkan Username" class="form-control" ></div>
           </div>
@@ -81,7 +86,7 @@
           <div class="form-group">
             <label class='col-md-9'>Password</label>
             <div class='col-md-9'><input type="password" name="password" autocomplete="off" required placeholder="Masukkan Password" class="form-control" ></div>
-          </div>
+          </div> -->
         </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

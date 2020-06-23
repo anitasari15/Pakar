@@ -1,33 +1,35 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php 
 
-class Test extends CI_Controller {
-
+/**
+ * 
+ */
+class ctrKonsul extends CI_Controller
+{
+	
 	function __construct()
 	{
-		# code...
 		parent::__construct();
 		$this->load->model('model_test');
 		$this->load->model('konsultasi');
+		$this->load->model('user');
+		$this->load->model('pasien/dataProfil');
 	}
 
 	public function index() {
 
 		// $this->load->view('admin/viewKonsul');
+		$data['pasien'] = $this->dataProfil->get_pasien($this->session->userdata('id_pasien'));
 		// $x['data']=$this->konsultasi->get_pasien();
         // $x['terakhir']=$this->model_test->getlast();
-        $this->load->view('admin/viewKonsul');
+        $this->load->view('pasien/konsul',$data);
         // $this->load->view('template/index');
         // $this->load->view('template/footerindex	x');
 		// $this->load->view('register_view',$data);
+	}
 
-		// Pasien
-		$id_konsultasi = $this->input->post('id_konsultasi');
-		// var_dump($id_konsultasi);die();
-
-		$id_pasien = $this->input->post('id_pasien');
-
+	public function konsul(){
 		// Inputan Konsultasi
+		$id_pasien = $this->input->post('id_pasien');
 		$tds = $this->input->post('TDS');
 		$tdd = $this->input->post('TDD');
 		$kbb = $this->input->post('KBB');
@@ -92,9 +94,16 @@ class Test extends CI_Controller {
 
 		if(isset($_POST['kirim_data'])) {
 			$hasil_konsultasi = $this->model_test->get_hasil_konsultasi($persentase_kombinasi);
+			$id_pasien = $this->session->userdata('id_pasien');
+			// $data['pasien'] = $this->dataProfil->get_pasien($this->session->userdata('id_pasien'));
 
+			// $id_pasien = $this->session->userdata('id_pasien');
+			// $pasien = $this->db->get_where('tb_pasien', array('id_pasien' => $id_pasien))->result();
+			// $data= $this->dataProfil->get_pasien($this->session->userdata('id_pasien'));
+			// var_dump($data);
 			$data_konsultasi = array(
 				'id_pasien' => $id_pasien,
+				// 'id_pasien' => $this->dataProfil->get_pasien($this->session->userdata('id_pasien')),
 				'hasil_konsultasi' => $hasil_konsultasi['status'],
 				'persentase' => $hasil_konsultasi['cf_persentase'],
 				'solusi' => $this->model_test->get_solusi($hasil_konsultasi['status']),
@@ -107,85 +116,14 @@ class Test extends CI_Controller {
 				'proteinuria' => $proteinuria
 			);
 
+			// $pasien = $this->session->userdata('id_pasien');
+			// $pasiens = $this->db->get_where('tb_konsultasi', array('id_pasien' => $pasien, ))->result();
+
+			// $this->model_test->insert($id,$data_konsultasi);
+			// $this->db->where('id_pasien');
 			$this->db->insert('tb_konsultasi', $data_konsultasi);
 		}
 
-		// var_dump($persentase_kombinasi);
-		// var_dump($nilai_z);
-		// var_dump($fk_tdd);
-		// var_dump($fk_tds);
-		// var_dump($fk_kbb);
-		// var_dump($fk_ui);
-		
-		// $this->model_test->get_persentase_kombinasi($arr, $nilai_z);
-		
-		// $this->db->query("INSERT INTO tb_detail_konsultasi VALUES ('', '$id_konsultasi','TDD', '$tdd')");
-		// $this->db->query("INSERT INTO tb_detail_konsultasi VALUES ('', '$id_konsultasi','TDS', '$tds')");
-		// $this->db->query("INSERT INTO tb_detail_konsultasi VALUES ('', '$id_konsultasi','KBB', '$kbb')");
-		// $this->db->query("INSERT INTO tb_detail_konsultasi VALUES ('', '$id_konsultasi','UK', '$uk')");
-		// $this->db->query("INSERT INTO tb_detail_konsultasi VALUES ('', '$id_konsultasi','UI', '$ui')");
-		// $this->db->query("INSERT INTO tb_detail_konsultasi VALUES ('', '$id_konsultasi','EDEMA', '$edema')");
-		// $this->db->query("INSERT INTO tb_detail_konsultasi VALUES ('', '$id_konsultasi','PROTEINURIA', '$proteinuria')");
-		redirect('ctrDataKonsul');
+		redirect('pasien/ctrRiwayat');
 	}
-
-	public function insert ()
-	{
-		$this->load->model('konsultasi');
-
-		
-		$x['data']=$this->konsultasi->get_pasien();
-        $this->load->view('admin/viewKonsul',$x);
-        
-		
-
-		// $data = array(
-			
-		// 	'id_pasien' => '1',
-		// 	'hasil_konsultasi' => 'Normal',
-		// 	'persentase' => '89',
-		// 	'solusi' => 'asasa'
-			
-		// );
-
-		// $this->db->insert('tb_konsultasi', $data);
-		$this->model_test->get_persentase_kombinasi($arr, $nilai_z);
-		$this->model_test->coba($data);
-		
-
-		// $this->load->library('form_validation');
-  //       $this->form_validation->set_rules('nilai', 'nilai', 'required');
-  //       if($this->form_validation->run()==FALSE){
-  //           $this->session->set_flashdata('error',"Data Gagal Di Tambahkan");
-  //           redirect('admin');
-  //       }else{
-  //       	// if (){
-  //       	// 	s$data_respon = array(
-  //        //        'id_user' => $id_user,
-  //        //    	);
-  //       	// }
-
-            
-
-  //           $this->db->insert('respon', $data_respon);
-  //           $id_respon = $this->db->insert_id();
-
-  //           foreach($data_temp as $row) {
-  //               $data_detail = array(
-  //                   'id_detail_respon' => '',
-  //                   'id_respon' => $id_respon,
-  //                   'id_pertanyaan' => $row->id_pertanyaan,
-  //                   'jawaban' => $row->jawaban
-  //               );
-
-  //               $this->db->insert('detail_respon', $data_detail);
-  //           }
-  //           $data=array(
-            	
-  //           );
-  //           $this->db->insert('tb_detail_konsultasi',$data);
-  //           $this->session->set_flashdata('sukses',"Data Berhasil Disimpan");
-  //           redirect('ctrDataKonsul');
-		// }
-	} 
 }

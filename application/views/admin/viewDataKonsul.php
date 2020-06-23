@@ -31,13 +31,15 @@
    <button class="btn btn-danger" type="Submit" name="tampil" value="download"><span class="glyphicon glyphicon-download-alt"> Download</span></button>
  </form> -->
 
-            <table id="datatable" class="table table-bordered table-responsive">
+            <table id="datatable" class="table table-bordered">
               <thead>
                 <tr>
                   <th> No </th>
-                  <th> Id Konsultasi </th>
+                  <!-- <th> Id Konsultasi </th> -->
                   <th> Nama Pasien </th>
-                  <th> Tanggal Konsultasi </th>
+                  <th> Tanggal Lahir Pasien </th>
+                  <!-- <th> Alamat Pasien </th> -->
+                  <!-- <th> Tanggal Konsultasi </th> -->
 <!--                   <th> Tekanan Darah Sistolic (mmHg)</th>
                   <th> Tekanan Darah Diastolic </th>
                   <th> Kenaikan Berat Badan </th>
@@ -45,27 +47,28 @@
                   <th> Usia Ibu </th>
                   <th> Edema </th>
                   <th> Proteinuria </th> -->
-                  <th> Hasil Konsultasi </th>
+                  <!-- <th> Hasil Konsultasi </th>
                   <th> Presentase </th>
-                  <th> Solusi </th>
+                  <th> Solusi </th> -->
                   <th> Aksi </th>
                 </tr>
               </thead>
               <tbody>
-              	<?php $no=1; foreach($all as $row): ?>
-              <tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">  
+              	<?php $no=1; foreach($data as $row): ?>
                 <td><?php echo $no++; ?></td>
-                <td><?php echo $row->id_konsultasi;?> </td>
+                <!-- <td><?php echo $row->id_konsultasi;?> </td> -->
                 <td><?php echo $row->nama;?> </td>
-                <td><?php echo $row->tanggal_konsultasi; ?></td>
+                <td><?php echo $row->tgl_lahir;?> </td>
+                <!-- <td><?php echo $row->alamat;?> </td> -->
+                <!-- <td><?php echo $row->tanggal_konsultasi; ?></td>
                 <td><?php echo $row->hasil_konsultasi; ?></td>
-                <td><?php echo $row->persentase; ?></td>
-                <td><?php echo $row->solusi; ?></td>
+                <td><?php echo $row->persentase; ?></td> -->
+                <!-- <td><?php echo $row->solusi; ?></td> -->
                 <td>
                   <center>
                     <div>
-                      <a data-toggle="modal" data-target="#modal-edit<?=$row->id_konsultasi;?>" class="btn btn-warning btn-circle" data-popup="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil"></i></a>
-                      <a href="<?php echo site_url('ctrGejala/hapus/'.$row->id_konsultasi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->id_konsultasi;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-file-pdf-o"></i></a>
+                      <a href="<?php echo base_url() ?>ctrDataKonsul/detail/<?php echo $row->id_pasien ?>" class="btn btn-info btn-circle"><i class="fa fa-eye"></i></a>
+                      <!-- <a href="<?php echo site_url('ctrGejala/hapus/'.$row->id_konsultasi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->id_konsultasi;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-file-pdf-o"></i></a> -->
                     </div>
                   </center>
                 </td>
@@ -77,7 +80,7 @@
     </div>
 </div>
 
-<?php $no=0; foreach($all as $row): $no++; ?>
+<!-- <?php $no=0; foreach($all as $row): $no++; ?>
   <div id="modal-edit<?=$row->id_konsultasi;?>" class="modal fade">
     <div class="modal-dialog">
       <form action="<?php echo site_url('ctrDataKonsul/edit'); ?>" method="post">
@@ -107,4 +110,4 @@
     </form>
   </div>
 </div>
-<?php endforeach; ?>
+<?php endforeach; ?> -->

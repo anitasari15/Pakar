@@ -1,8 +1,8 @@
-<!-- <?php
-    // if ($this->session->userdata('level') != 1 && $this->session->userdata('level') != 2) {
-    //     redirect('ctrLogin');
-    // }
-?> -->
+<?php
+    if ($this->session->userdata('level') != 0 && $this->session->userdata('level') != 1 && $this->session->userdata('level') != 2) {
+        redirect('ctrLogin');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,9 +60,9 @@
 
             <!-- menu profile quick info -->
             <div class="profile clearfix">
-              <div class="profile_pic">
+              <!-- <div class="profile_pic">
                 <img src="<?php echo base_url() ?>assets/new/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
+              </div> -->
               <div class="profile_info">
                 <span>Welcome,</span>
                 <h2><?php echo $this->session->userdata('nama') ;?></h2>
@@ -86,6 +86,7 @@
                   <li><a href="<?php echo site_url() ?>ctrGejala"><i class="fa fa-folder"></i> Gejala </a>
                   </li>
                   <li><a href="<?php echo site_url() ?>ctrKategori"><i class="fa fa-user"></i> Kategori Gejala </a>
+                  </li><li><a href="<?php echo site_url() ?>ctrSolusi"><i class="fa fa-user"></i> Solusi</a>
                   </li>
                   <li><a href="<?php echo site_url() ?>ctrKonsul"><i class="fa fa-table"></i> Konsultasi </span></a>
                   </li>

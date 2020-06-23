@@ -9,10 +9,10 @@ class ctrKonsul extends CI_Controller
     }
 
     public function index(){
-    	 $x['data']=$this->konsultasi->get_pasien();
-         $x['terakhir']=$this->model_test->getlast();
+    	 // $x['data']=$this->konsultasi->get_pasien();
+         // $x['terakhir']=$this->model_test->getlast();
         $this->load->view('template/index');
-        $this->load->view('admin/viewKonsul',$x);
+        $this->load->view('admin/viewKonsul');
         $this->load->view('template/footerindexx');
     }
 

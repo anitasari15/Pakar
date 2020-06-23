@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->session->set_userdata($user_data);
 				$this->session->set_flashdata('user_loggedin', 'You are now logged in');
 				// redirect('admin');
-				if ($this->session->userdata('level') == 0 ) {
+				if ($this->session->userdata('level') == 1 ) {
 					redirect('welcome/dashboard');
 				}
 				

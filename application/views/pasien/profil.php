@@ -49,12 +49,21 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase">
                     <li>
-                        <a href="<?php echo site_url() ?>/ctrLogin" target="_blank" class="btn btn-info btn-fill btn-lg ">Profil</a>
+                        <a href="<?php echo site_url() ?>pasien/ctrPasien" class="btn btn-info btn-fill btn-lg ">Home</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url() ?>/pasien/ctrProfil" class="btn btn-info btn-fill btn-lg ">Profil</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url() ?>/pasien/ctrKonsul" class="btn btn-info btn-fill btn-lg ">Konsultasi</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url() ?>/pasien/ctrRiwayat" class="btn btn-info btn-fill btn-lg ">Riwayat</a>
                     </li>
                     <li>
                       <!-- <button class="fa fa-sign-out" style="margin-top: 20pt ; color: red; font-size: 20px">
                       </button> -->
-                        <a href="<?php echo site_url() ?>/ctrLogin/logOutt" target="_blank" class="btn btn-danger btn-fill btn-lg">Logout</a>
+                        <a href="<?php echo site_url() ?>/ctrLogin/logOutt" class="btn btn-danger btn-fill btn-lg">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -62,8 +71,31 @@
         </div>
     </nav>
 
+    <div class="section" style="margin-top: 60pt">
+<div>
+    <div class="card">
+        <div class="card-body">
+            <center><h1>Data Pasien</h1></center>
+            <?php foreach ($pasien as $x): ?>
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <b>Nama <text style="padding-left:3.8em"></text>: <?php echo $x->nama; ?></b><br/>
+                <b>Tanggal Lahir : <?php echo $x->tgl_lahir;?></b><br>
+                <b>Alamat <text style="padding-left:3.2em"></text>: <?php echo $x->alamat;?></b></br>
+            <?php endforeach ?>
+        </div>
+        <center>
+                    <div>
+                      <!-- <a href="<?php echo base_url()?>pasien/ctrProfil/" class="btn btn-circle btn-success" style="color: black" data-placement="top" title="Kembali"><i class="fa fa-mail-reply"></i></a> -->
+                      <!-- <a href="<?php echo base_url()?>ctrPdf/cetak/<?php echo $x->id_konsultasi ?>" class="btn btn-danger btn-circle" style="color: black" data-placement="top" title="Cetak Data"><i class="fa fa-file"></i></a> -->
+                      <!-- <button class="btn btn-danger" type="Submit" name="tampil" value="download"><span class="glyphicon glyphicon-download-alt" title="cetak data"></span></button> -->
+                    </div>
+                  </center>
+        
+    </div>
 
-    <div class="section section-header">
+
+    <!-- <div class="section section-header"> -->
         <!-- <div class="parallax filter filter-color-grey">
             <div class="image"
                 style="background-image: url('<?php echo base_url() ?>assets/assets/img/bg.jpg')">
@@ -86,18 +118,18 @@
 
             </div>
         </div> -->
-    </div>
+    <!-- </div> -->
 
 
-    <div class="section" style="margin-top: 60pt">
+    <!-- <div class="section" style="margin-top: 60pt">
         <div class="container">
             <div class="row">
                 <div class="title-area">
                     <h2>Data User</h2>
-                    <div class="separator separator-danger">✻</div>
+                    <div class="separator separator-danger">✻</div> -->
                     <!-- <p class="description">Penting untuk bunda dalam mencari informasi lengkap mengenai kehamilan untuk menjaga Si Kecil Lahir dengan selamat.</p> -->
-                </div>
-            </div>
+                <!-- </div>
+            </div> -->
             <!-- <div class="row">
                 <div class="col-md-4">
                     <div class="info-icon">
@@ -127,7 +159,7 @@
                     </div>
                 </div>
             </div> -->
-            <?php foreach ($pasien as $i): ?>
+            <!-- <?php foreach ($pasien as $i): ?>
                 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <center><?php echo $i->nama; ?><hr/>
@@ -137,10 +169,10 @@
                 <b><?php echo $i->username;?></b><br/>
             <?php endforeach ?>
         </div>
-    </div>
+    </div> -->
 
 
-    <div class="section section-our-team-freebie">
+    <!-- <div class="section section-our-team-freebie">
         <div class="parallax filter filter-color-black">
             <div class="image" style="background-image:url('<?php echo base_url() ?>assets/assets/img/bg1.jpg')">
             </div>
@@ -149,16 +181,16 @@
                     <div class="row">
                         <div class="title-area">
                             <h2>Perkenalkan</h2>
-                            <div class="separator separator-danger">✻</div>
+                            <div class="separator separator-danger">✻</div> -->
                             <!-- <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p> -->
-                        </div>
+                        <!-- </div>
                     </div>
 
                     <div class="team">
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4"> -->
                                         <!-- <div class="card card-member">
                                             <div class="content">
                                                 <div class="avatar avatar-danger">
@@ -171,7 +203,7 @@
                                                 </div>
                                             </div>
                                         </div> -->
-                                    </div>
+                                    <!-- </div>
                                     <div class="col-md-4">
                                         <div class="card card-member">
                                             <div class="content">
@@ -186,7 +218,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4"> -->
                                         <!-- <div class="card card-member">
                                             <div class="content">
                                                 <div class="avatar avatar-danger">
@@ -199,7 +231,7 @@
                                                 </div>
                                             </div>
                                         </div> -->
-                                    </div>
+                                    <!-- </div>
 
                                 </div>
                             </div>
@@ -209,6 +241,6 @@
             </div>
         </div>
     </div>
-
+ -->
 
     

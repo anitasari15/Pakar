@@ -7,7 +7,7 @@
 		<div>
 			<!-- <form method="POST"  action="<?php echo site_url('ctrkonsul/hitung'); ?>"> -->
       <form method="POST"  action="<?php echo site_url('test'); ?>">
-          <input type="text" value="<?php echo (int)$terakhir->id_konsultasi+1; ?>" name="id_konsultasi" hidden>
+          <!-- <input type="text" value="<?php echo (int)$terakhir->id_konsultasi+1; ?>" name="id_konsultasi" hidden> -->
             <div class="form-group">
             	<label class='col-md-9'>Nama Pasien</label>
             	<div class='col-md-9'>
@@ -67,14 +67,14 @@
                   <option value="">Masukkan Proteinuria</option>
                   <option value="Normal">Normal</option>
                   <option value="Tinggi">Tinggi</option>
-                  <option value="SangatTinggi">Sangat Tinggi</option>
+                  <option value="Sangat Tinggi">Sangat Tinggi</option>
                 </select>
               </div>
           </div>
           <br>
           <div class="form-group">
           	<div class="col-md-4">
-            	<button type="submit" class="btn btn-primary"><i class="icon-checkmark-circle2"></i> Simpan</button>
+            	<button name="kirim_data" type="submit" class="btn btn-primary"><i class="icon-checkmark-circle2"></i> Simpan</button>
         	</div>
           </div>
 		</form>

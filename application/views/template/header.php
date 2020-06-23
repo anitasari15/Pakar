@@ -34,6 +34,7 @@
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+    <script src="<?php echo base_url() ?>assets/new/vendors/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -55,10 +56,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase">
                     <li>
-                        <a href="<?php echo site_url() ?>/ctrLogin" target="_blank" class="btn btn-info btn-fill btn-lg ">Login</a>
+                        <a href="<?php echo site_url() ?>/ctrLogin" class="btn btn-info btn-fill btn-lg ">Login</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url() ?>/ctrRegis" target="_blank" class="btn btn-info btn-fill btn-lg">Sign Up</a>
+                        <a href="<?php echo site_url() ?>/ctrRegis" class="btn btn-info btn-fill btn-lg">Sign Up</a>
                     </li>
                 </ul>
             </div>

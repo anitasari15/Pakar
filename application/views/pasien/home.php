@@ -55,12 +55,21 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase">
                     <li>
-                        <a href="<?php echo site_url() ?>/pasien/ctrProfil" target="_blank" class="btn btn-info btn-fill btn-lg ">Profil</a>
+                        <a href="<?php echo site_url() ?>pasien/ctrPasien" class="btn btn-info btn-fill btn-lg ">Home</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url() ?>/pasien/ctrProfil" class="btn btn-info btn-fill btn-lg ">Profil</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url() ?>/pasien/ctrKonsul" class="btn btn-info btn-fill btn-lg ">Konsultasi</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url() ?>/pasien/ctrRiwayat" class="btn btn-info btn-fill btn-lg ">Riwayat</a>
                     </li>
                     <li>
                       <!-- <button class="fa fa-sign-out" style="margin-top: 20pt ; color: red; font-size: 20px">
                       </button> -->
-                        <a href="<?php echo site_url() ?>/ctrLogin/logOutt" target="_blank" class="btn btn-danger btn-fill btn-lg">Logout</a>
+                        <a href="<?php echo site_url() ?>/ctrLogin/logOutt" class="btn btn-danger btn-fill btn-lg">Logout</a>
                     </li>
                 </ul>
             </div>

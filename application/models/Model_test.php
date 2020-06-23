@@ -8,50 +8,27 @@ class Model_test extends CI_Model {
 		return $kategori_gejala[$column];
 	}
 
-	public function get_id_konsultasi(){
+	public function get_hasil_konsultasi($arr) {
+		$data = array();
+		$persentase_tertinggi = 0;
 
+		foreach($arr as $row) {
+			if($row['cf_persentase'] > $persentase_tertinggi) {
+				$persentase_tertinggi = $row['cf_persentase'];
+
+				$data = $row;
+			}
+		}
+
+		return $data;
 	}
-	
-	// public function get_aturan() {
-	// 	$arr_aturan = array();
 
-	// 	$semua_aturan = $this->db->get('tb_aturan')->result_array();
+	public function get_solusi($status) {
+		$this->db->where('status', $status);
+		$solusi = $this->db->get('tb_solusi')->row();
 
-	// 	foreach($semua_aturan as $aturan) {
-	// 		$this->db->where('id_aturan', $aturan['id_aturan']);
-	// 		$this->db->order_by('id_detail_aturan', 'ASC');
-
-	// 		$semua_detail = $this->db->get('tb_detail_aturan')->result_array();
-
-	// 		$temp = array(
-	// 			'status_aturan' => $aturan['status_aturan'],
-	// 			'cf_aturan' => $aturan['cf_aturan'],
-	// 			'tds' => $this->get_kategori_gejala($semua_detail[0]['id_kategori_gejala']),
-	// 			'tdd' => $this->get_kategori_gejala($semua_detail[1]['id_kategori_gejala']),
-	// 			'kbb' => $this->get_kategori_gejala($semua_detail[2]['id_kategori_gejala']),
-	// 			'uk' => $this->get_kategori_gejala($semua_detail[3]['id_kategori_gejala']),
-	// 			'ui' => $this->get_kategori_gejala($semua_detail[4]['id_kategori_gejala']),
-	// 			'edema' => $this->get_kategori_gejala($semua_detail[5]['id_kategori_gejala']),
-	// 			'proteinuria' => $this->get_kategori_gejala($semua_detail[6]['id_kategori_gejala'])
-	// 		);
-
-	// 		array_push($arr_aturan, $temp);
-	// 	}
-
-	// 	return $arr_aturan;
-	// }
-
-	// public function tbhDetKon()
-	// {
-	// 	$data = array(
-	// 		$id_detail_konsultasi = '', 
-	// 		$id_konsultasi = $this->input->post('id_konsultasi'),
-	// 		$kategori_gejala = $this->input->post('kategori_gejala'),
-	// 		$nilai = $this->input->post('nilai')
-	// 	);
-
-	// 	$this->db->insert('tb_detail_konsultasi', $data);
-	// }
+		return $solusi->solusi;
+	}
 
 	public function cari_aturan($tds, $tdd, $kbb, $uk, $ui, $edema, $proteinuria) {
 		$where = array(
@@ -120,36 +97,9 @@ class Model_test extends CI_Model {
 
 			array_push($result, $temp);
 
-		// 	$data = array(
-		// 	'id_pasien' => $this->input->post('id_pasien', true),
-		// 	'hasil_konsultasi' => $key,
-		// 	'persentase' =>$cf_persentase
-		// );
-
-		// return $this->db->insert('tb_konsultasi',$data);
-		// $this->db->insert('tb_detail_konsultasi',$data);
-
 		}
 
 		return $result;
-	}
-	function getlast(){
-		$last=$this->db->query("SELECT * FROM tb_konsultasi ORDER BY id_konsultasi DESC LIMIT 1");
-		return $last->row();
-	}
-
-	public function insert(){
-		// $a = stdClass($cf_persentase);
-		// $cf_persentase = array();
-		// $kalimat = $cf_persentase;
-		// $arr_kalimat = implode (", ",$kalimat);
-		// $a = [$cf_persentase => 'cf_persentase'];
-		$data = array(
-			'id_pasien' => $this->input->post('id_pasien'),
-			'hasil_konsultasi' => $cf_persentase
-		);
-
-		return $this->db->insert('tb_konsultas',$data);
 	}
 
 	public function get_keanggotaan_tds($himpunan, $nilai) {
@@ -184,7 +134,7 @@ class Model_test extends CI_Model {
 				if($nilai <= 160) {
 					$nilai_himpunan = 0;
 				} else if($nilai > 160 && $nilai < 200) {
-					$nilai_himpunan = ($nilai - 200) / (200 - 160);
+					$nilai_himpunan = ($nilai - 160) / (200 - 160);
 				} else {
 					$nilai_himpunan = 1;
 				}
@@ -230,7 +180,7 @@ class Model_test extends CI_Model {
 				if($nilai <= 110) {
 					$nilai_himpunan = 0;
 				} else if($nilai > 110 && $nilai < 150) {
-					$nilai_himpunan = ($nilai - 150) / (150 - 110);
+					$nilai_himpunan = ($nilai - 110) / (150 - 110);
 				} else {
 					$nilai_himpunan = 1;
 				}
@@ -276,7 +226,7 @@ class Model_test extends CI_Model {
 				if($nilai <= 2) {
 					$nilai_himpunan = 0;
 				} else if($nilai > 2 && $nilai < 4) {
-					$nilai_himpunan = ($nilai - 4) / (4 - 2);
+					$nilai_himpunan = ($nilai - 2) / (4 - 2);
 				} else {
 					$nilai_himpunan = 1;
 				}
@@ -426,10 +376,8 @@ class Model_test extends CI_Model {
 		return $result;
 	}
 
-	// public function get_konsul(){
-	// 	 $query = $this->db->query("SELECT * FROM tb_detail_konsultasi 
-	// 	 	join tb_konsultasi 
-	// 	 	on tb_detail_konsultasi.id_konsultasi = tb_konsultasi.id_konsultasi");
- //        return $query->result(); 
-	// }
+	public function insert($id, $data){
+		$this->db->where('id_pasien', $id);
+		$this->db->insert('tb_konsultasi',$data);
+	}
 }

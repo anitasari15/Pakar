@@ -101,5 +101,5 @@ class ctrCetak extends CI_Controller
 		        }
 		        $pdf->Output();
 			}
-		}s
+		}
 }
