@@ -26,6 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	public function tbhPasien(){
  		$this->load->library('form_validation');
+ 		$this->form_validation->set_rules('nik', 'nik', 'required');
         $this->form_validation->set_rules('nama', 'nama', 'required');
         if($this->form_validation->run()==FALSE){
             $this->session->set_flashdata('error',"Data Gagal Di Tambahkan");
@@ -38,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 "tgl_lahir"=>$_POST['tgl_lahir'],
                 "username"=>$_POST['nik'],
                 "password"=>md5($_POST['nik']),
-                "level"=>'2'
+                "id_level"=>'2'
             );
             $this->db->insert('tb_pasien',$data);
             $this->session->set_flashdata('sukses',"Data Berhasil Disimpan");
@@ -46,23 +47,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
  	}
 
- 	public function edit(){
- 		$this->load->library('form_validation');
-        $this->form_validation->set_rules('nama', 'nama', 'required');
-        if($this->form_validation->run()==FALSE){
-            $this->session->set_flashdata('error',"Data Gagal Di Edit");
-            redirect('ctrPasien');
-        }else{
+ 	public function edit($id,$nik){
             $data=array(
-                "nama"=>$_POST['nama'],
-                "alamat"=>$_POST['alamat'],
-                "tgl_lahir"=>$_POST['tgl_lahir']
+                "password"=>md5($nik),
             );
-            $this->db->where('id_pasien', $_POST['id_pasien']);
+            $this->db->where('id_pasien',$id);
             $this->db->update('tb_pasien',$data);
             $this->session->set_flashdata('sukses',"Data Berhasil Diedit");
             redirect('ctrPasien');
-        }
+        
  	}
 
  	public function hapus($id){

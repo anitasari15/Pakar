@@ -44,10 +44,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	public function tbhKategori(){
  		$this->load->library('form_validation');
-        $this->form_validation->set_rules('kategori_gejala', 'kategori_gejala', 'required');
+        $this->form_validation->set_rules('kategori_gejala', 'kategori_gejala', 'required | is_unique[tb_kategori_gejala.id_gejala]');
         if($this->form_validation->run()==FALSE){
             $this->session->set_flashdata('error',"Data Gagal Di Tambahkan");
-            redirect('ctrGejala');
+            redirect('ctrKategori');
         }else{
             $data=array(
                 "id_gejala"=>$_POST['id_gejala'],

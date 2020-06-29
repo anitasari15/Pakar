@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$password = md5($this->input->post('password'));
 
 			$id_user = $this->user->login($username, $password);
+			$id_pasien= $this->user->loginn($username, $password);
 			// var_dump($level); 
 			// die();
 			if ($id_user) {
@@ -42,16 +43,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					'username' => $username,
 					'nama' => $nama[0]->nama,
 					'logged_in' => true,
-					'level' => $level[0]->level  
+					'id_level' => $level[0]->id_level  
 				);
 
 				$this->session->set_userdata($user_data);
 				$this->session->set_flashdata('user_loggedin', 'You are now logged in');
 				// redirect('admin');
-				if ($this->session->userdata('level') == 1 ) {
+				if ($this->session->userdata('id_level') == 1 ) {
 					redirect('welcome/dashboard');
 				}
 				
+			}
+			else if ($id_pasien) {
+				$level = $this->user->get_files($id_pasien);
+				$nama = $this->user->get_files($id_pasien);
+				$pasien_data = array(
+					'id_pasien' => $id_pasien,
+					'username' => $username,
+					'nama' => $nama[0]->nama,
+					'logged_in' => true,
+					'id_level' => $level[0]->id_level  
+				);
+
+				$this->session->set_userdata($pasien_data);
+				$this->session->set_flashdata('user_loggedin', 'You are now logged in');
+				// redirect('admin');
+				if ($this->session->userdata('id_level') == 2 ) {
+					redirect('pasien/ctrPasien');
+				}
+
 			} else {
 				$this->session->set_flashdata('login_failed', 'Login Failed');
 				redirect('ctrLogin');

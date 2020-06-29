@@ -15,26 +15,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="image" style="background-image:url('<?php echo base_url() ?>assets/assets/img/bg1.jpg')">
   <section class="container">
     <div class="login">
       <h1>Login Sistem Pakar Preeklampsia</h1>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login-pakar"><i class="fa fa-plus"></i> Login Pakar </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login-pasien"><i class="fa fa-plus"></i> Login Pasien </button>
-      <form method="post" action="<?php echo base_url('index.php/ctrLogin/cekLogin') ?>">
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login-pakar"><i class="fa fa-plus"></i> Login Pakar </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login-pasien"><i class="fa fa-plus"></i> Login Pasien </button> -->
+      <form method="post" action="<?php echo base_url('ctrLogin/cekLogin') ?>">
         <p><input type="text" name="username" value="" placeholder="Username"></p>
         <p><input type="password" name="password" value="" placeholder="Password"></p>
-        <!-- <div>
-        <select name="level" class="form-control">
-          <option >Pilih Jenis User</option>
-          <option name="user" value="user">User</option>
-          <option name="petugas" value="petugas">Petugas</option>
-        </select>
-      </div> -->
+         
         <p class="remember_me">
         </p>
         <p class="submit"><input type="submit" name="submit" value="Login"></p>
-        <!-- <p>Don’t have an account? <a href="<?php echo site_url()?>/ctrRegis">Sign up now</a></p> -->
+        <p>Lupa Password? <a data-toggle="modal" data-target="#LupaPassword" class="btn btn-warning btn-circle" data-popup="tooltip" data-placement="top" title="Lupa Password"><a class="fa fa-pencil"></a> 
+        </p>
+
         <p>Back to home? <a href="<?php echo site_url()?>/welcome">Home</a></p>
       </form>
     </div>
@@ -43,13 +39,13 @@
 </body>
 
 </html>
-<div id="modal-login-pakar" class="modal fade">
+<div id="LupaPassword" class="modal fade">
     <div class="modal-dialog">
-      <form action="<?php echo site_url('ctrLogin/ceklogin'); ?>" method="post">
+      <form>
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <a class="modal-title">Login Petugas</a>
+          <a class="modal-title">Lupa Password</a>
         </div>
         <div class="modal-body">
           
@@ -60,18 +56,18 @@
           <br>
           <br>
           <div class="form-group">
-            <label class='col-md-9'>Username</label>
-            <div class='col-md-9'><input type="text" name="username" autocomplete="off" required placeholder="Masukkan Username" class="form-control" ></div>
+            <label class='col-md-9'>Silahkan Hubungi Petugas Untuk Mereset Password</label>
+            <div class='col-md-9'></div>
           </div>
           <br>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class='col-md-9'>Password</label>
             <div class='col-md-9'><input type="password" name="password" autocomplete="off" required placeholder="Masukkan Password" class="form-control" ></div>
-          </div>
+          </div> -->
         </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary"><i class="icon-checkmark-circle2"></i> Simpan</button>
+            <!-- <button type="submit" class="btn btn-primary"><i class="icon-checkmark-circle2"></i> Simpan</button> -->
           </div>
         </form>
     </div>

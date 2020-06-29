@@ -2,12 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Model {
 
-	public function get_user(){
-		$this->db->select('*');
-		$this->db->from('tb_user');
-		return $this->db->get()->result();
-	}
-
 	public function get_file($id_user)
 	{
 		$this->db->select('*');
@@ -68,14 +62,6 @@ class User extends CI_Model {
 		}
 	}
 
-	public function get_files($id_pasien)
-	{
-		$this->db->select('*');
-		$this->db->from('tb_pasien');
-		$this->db->where('id_pasien', $id_pasien);
-		return $this->db->get()->result();
-	}
-
 	public function loginn($username, $password){
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
@@ -87,6 +73,20 @@ class User extends CI_Model {
 		} else {
 			return false;
 		}
+	}
+
+    public function get_user(){
+		$this->db->select('*');
+		$this->db->from('tb_user');
+		return $this->db->get()->result();
+	}
+
+    public function get_files($id_pasien)
+	{
+		$this->db->select('*');
+		$this->db->from('tb_pasien');
+		$this->db->where('id_pasien', $id_pasien);
+		return $this->db->get()->result();
 	}
 
 }

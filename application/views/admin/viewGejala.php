@@ -7,7 +7,7 @@
 		<div class="card-body">
             <h4 class="card-title">Tabel Gejala</h4>
             <!-- <button><?php echo anchor('ctrGejala/tbhGejala','Tambah Data', array('class' => 'btn btn-sm btn-info')); ?></button> -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="fa fa-plus-circle"></i> Tambah </button>
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-tambah"><i class="fa fa-plus-circle"></i> Tambah </button> -->
                     <table id="datatable" class="table table-bordered">
                       <thead>
                         <tr>
@@ -27,7 +27,7 @@
                           <center>
                             <div>
                               <a data-toggle="modal" data-target="#modal-edit<?=$row->id_gejala;?>" class="btn btn-warning btn-circle" data-popup="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil"></i></a>
-                              <a href="<?php echo site_url('ctrGejala/hapus/'.$row->id_gejala); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->nama_gejala;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-trash"></i></a>
+                              <!-- <a href="<?php echo site_url('ctrGejala/hapus/'.$row->id_gejala); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->nama_gejala;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-trash"></i></a> -->
                             </div>
                           </center>
                         </td>

@@ -22,10 +22,10 @@ class modelView extends CI_Model
 	function getDataLabel($id)
 	{
 		$query = $this->db->query("SELECT*
-         FROM tb_konsultasi tu
-         left join tb_pasien mt
-         on tu.id_pasien = mt.id_pasien
-         WHERE tu.id_pasien = $id");
+			FROM tb_konsultasi tu
+			left join tb_pasien mt
+			on tu.id_pasien = mt.id_pasien
+			WHERE tu.id_pasien = $id");
 		return $query->result();
 		// return $this->db->get()->result();
 	}
@@ -45,8 +45,8 @@ class modelView extends CI_Model
 
 	public function viewDetail(){
 		$query = $this->db->query('SELECT *
-		FROM tb_konsultasi, tb_pasien
-		WHERE tb_konsultasi.id_konsultasi = tb_detail_konsultasi.id_konsultasi');
+			FROM tb_konsultasi, tb_pasien
+			WHERE tb_konsultasi.id_konsultasi = tb_detail_konsultasi.id_konsultasi');
 
 		// $query = $this->db->query('SELECT *
 		// 	FROM tb_pasien, tb_konsultasi, tb_detail_konsultasi
@@ -61,10 +61,20 @@ class modelView extends CI_Model
 		// $query = $this->db->query("SELECT * FROM tb_konsultasi, tb_pasien WHERE tb_konsultasi.id_konsultasi = tb_detail_konsultasi.id_konsultasi =".$id);
 		// $query = $this->db->query('SELECT * from tb_konsultasi WHERE id_konsultasi='.$id);
 		$this->db->join('tb_pasien', 'tb_pasien.id_pasien = tb_konsultasi.id_pasien', 'left');
-        $this->db->where('id_konsultasi', $id);
+		$this->db->where('id_konsultasi', $id);
 
-        $result = $this->db->get('tb_konsultasi');
+		$result = $this->db->get('tb_konsultasi');
 		return $result->result();
+	}
+
+	public function get_pasien($id){
+		$this->db->where('id_pasien', $id)->limit(1);
+		$result = $this->db->get('tb_pasien')->result();
+		if ($result){
+			return $result[0];
+		} else {
+			return false;
+		}
 	}
 
 }

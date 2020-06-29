@@ -72,7 +72,7 @@
                 <b>Edema <text style="padding-left:8.5em"></text>: <?php echo $x->edema;?></b><br/>
                 <b>Proteinuria <text style="padding-left:6.5em"></text> : <?php echo $x->proteinuria;?></b><br/>
                 <b>Hasil Konsultasi <text style="padding-left:4em"></text>: <?php echo $x->hasil_konsultasi;?></b><br/>
-                <b>Presentase <text style="padding-left:6.5em"></text>: <?php echo $x->persentase;?>%</b><br/>
+                <b>Presentase <text style="padding-left:6.5em"></text>: <?php echo sprintf("%.2f%%", $x->persentase);?></b><br/>
                 <b>Solusi<text style="padding-left:9em"></text>: <?php echo $x->solusi;?></b><br/>
             <?php endforeach ?>
         </div>

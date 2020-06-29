@@ -3,16 +3,16 @@
             <div class="row">
                 <div class="col-md-2 col-sm-3">
                     <div class="info">
-                        <div class="fa fa-map-marker">
+                        <!-- <div class="fa fa-map-marker">
                             <p>hksfdkjsfhdjs</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-md-3 col-md-offset-1 col-sm-3">
                     <div class="info">
-                        <div class="fa fa-phone">
+                        <!-- <div class="fa fa-phone">
                             <p>shdbajksfhajhsfjakm</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

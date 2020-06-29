@@ -22,7 +22,7 @@ class Test extends CI_Controller {
 		// $this->load->view('register_view',$data);
 
 		// Pasien
-		$id_konsultasi = $this->input->post('id_konsultasi');
+		// $id_konsultasi = $this->input->post('id_konsultasi');
 		// var_dump($id_konsultasi);die();
 
 		$id_pasien = $this->input->post('id_pasien');

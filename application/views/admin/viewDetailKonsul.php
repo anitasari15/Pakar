@@ -3,26 +3,19 @@
 <div class="col-sm-10 right_col grid-margin stretch-card">
 	<div class="card">
 		<div class="card-body">
-      <div>
-        <!-- <?php $no=1; foreach($data as $row): ?>  -->
-          <?php echo $row[0]->nama ?>
-        <!--<?php endforeach ?> -->
-      </div>
+      <h2>Data Konsultasi (<?php echo $pasien->nama; ?>)</h2>
+      <!-- <?php foreach($data as $row): ?>
+        <?php echo $row->nama;?>
+      <?php endforeach ?> -->
+      <!-- <?php echo $this->db->where('nama') ;?> -->
+      <!-- <?php echo $this->db->from('id_pasien') ;?> -->
 			<table id="datatable" class="table table-bordered">
               <thead>
                 <tr>
                   <th> No </th>
                   <!-- <th> Id Konsultasi </th> -->
                   <th> Nama Pasien </th>
-                  <!-- <th> Tanggal Lahir Pasien </th> -->
                   <th> Tanggal Konsultasi </th>
-                  <!-- <th> Tekanan Darah Diastolic (mmHg)</th>
-                  <th> Tekanan Darah Sistolic </th>
-                  <th> Kenaikan Berat Badan </th>
-                  <th> Usia Kehamilan </th>
-                  <th> Usia Ibu </th>
-                  <th> Edema </th>
-                  <th> Proteinuria </th> -->
                   <th> Hasil Konsultasi </th>
                   <th> Presentase </th>
                   <th> Solusi </th>
@@ -35,13 +28,6 @@
                 <!-- <td><?php echo $row->id_konsultasi;?> </td> -->
                 <td><?php echo $row->nama;?> </td>
                 <td><?php echo $row->tanggal_konsultasi; ?></td>
-                <!-- <td><?php echo $row->tdd; ?></td>
-                <td><?php echo $row->tds; ?></td>
-                <td><?php echo $row->kbb; ?></td>
-                <td><?php echo $row->uk; ?></td>
-                <td><?php echo $row->ui; ?></td>
-                <td><?php echo $row->edema; ?></td>
-                <td><?php echo $row->proteinuria; ?></td> -->
                 <td><?php echo $row->hasil_konsultasi; ?></td>
                 <td><?php echo sprintf("%.2f%%", $row->persentase); ?></td>
                 <td><?php echo $row->solusi; ?></td>

@@ -83,9 +83,9 @@
                   </li> -->
                   <li><a href="<?php echo site_url() ?>ctrPasien"><i class="fa fa-user"></i> Pasien </a>
                   </li>
-                  <li><a href="<?php echo site_url() ?>ctrGejala"><i class="fa fa-folder"></i> Gejala </a>
+                  <!-- <li><a href="<?php echo site_url() ?>ctrGejala"><i class="fa fa-folder"></i> Gejala </a> -->
                   </li>
-                  <li><a href="<?php echo site_url() ?>ctrKategori"><i class="fa fa-user"></i> Kategori Gejala </a>
+                  <li><a href="<?php echo site_url() ?>ctrKategori"><i class="fa fa-user"></i> Gejala </a>
                   </li><li><a href="<?php echo site_url() ?>ctrSolusi"><i class="fa fa-user"></i> Solusi</a>
                   </li>
                   <li><a href="<?php echo site_url() ?>ctrKonsul"><i class="fa fa-table"></i> Konsultasi </span></a>

@@ -98,7 +98,7 @@
                 <td><?php echo $row->edema; ?></td>
                 <td><?php echo $row->proteinuria; ?></td>
                 <td><?php echo $row->hasil_konsultasi; ?></td>
-                <td><?php echo $row->persentase; ?></td>
+                <td><?php echo sprintf("%.2f%%", $row->persentase); ?></td>
                 <td><?php echo $row->solusi; ?></td>
                 <td>
                   <center>
