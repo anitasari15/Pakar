@@ -8,20 +8,13 @@ class modelView extends CI_Model
 {
 
 	public function data($id_pasien){
-		// $query = $this->db->query('SELECT * FROM tb_konsultasi, tb_pasien WHERE id_pasien = ' .$id);
-
-		// return $query->result();
-
-		// $query = "SELECT * FROM tb_konsultasi WHERE id_pasien = ?";
-		// return $this->query($query, [$id_pasien]);
-
 		$query = $this->db->query("SELECT * FROM tb_konsultasi WHERE id_pasien = $id_pasien");
 		return $query->result();
 	}
 
 	function getDataLabel($id)
 	{
-		$query = $this->db->query("SELECT*
+		$query = $this->db->query("SELECT* , DATE_FORMAT(tanggal_konsultasi, '%d %M %Y') as tanggal_konsultasi
 			FROM tb_konsultasi tu
 			left join tb_pasien mt
 			on tu.id_pasien = mt.id_pasien
@@ -32,14 +25,9 @@ class modelView extends CI_Model
 	
 	
 	public function view(){
-		// $query = $this->db->query('SELECT tb_konsultasi.*, tb_pasien.* FROM tb_konsultasi INNER JOIN tb_pasien ON tb_konsultasi.id_pasien=tb_pasien.id_pasien ORDER BY id_pasien');
-		$query = $this->db->query('SELECT *
+		$query = $this->db->query("SELECT * , DATE_FORMAT(tgl_lahir, '%d %M %Y') as tgl_lahir
 			FROM tb_konsultasi, tb_pasien
-			WHERE tb_konsultasi.id_pasien = tb_pasien.id_pasien GROUP BY nama');
-		// $query = $this->db->query('SELECT * 
-		// FROM tb_konsultasi, tb_pasien
-		// WHERE tb_konsultasi.id_pasien = tb_pasien.id_pasien
-		// ORDER BY id_pasien');
+			WHERE tb_konsultasi.id_pasien = tb_pasien.id_pasien GROUP BY nama");
 		return $query->result();
 	}
 
@@ -48,23 +36,23 @@ class modelView extends CI_Model
 			FROM tb_konsultasi, tb_pasien
 			WHERE tb_konsultasi.id_konsultasi = tb_detail_konsultasi.id_konsultasi');
 
-		// $query = $this->db->query('SELECT *
-		// 	FROM tb_pasien, tb_konsultasi, tb_detail_konsultasi
-		// 	JOIN tb_pasien.id_pasien = tb_konsultasi.id_pasien
-		// 	JOIN tb_konsultasi.id_konsultasi = tb_detail_konsultasi.id_konsultasi');
-
 		return $query->result();
 	}
 
 	public function get_konsul($id)
 	{
-		// $query = $this->db->query("SELECT * FROM tb_konsultasi, tb_pasien WHERE tb_konsultasi.id_konsultasi = tb_detail_konsultasi.id_konsultasi =".$id);
-		// $query = $this->db->query('SELECT * from tb_konsultasi WHERE id_konsultasi='.$id);
-		$this->db->join('tb_pasien', 'tb_pasien.id_pasien = tb_konsultasi.id_pasien', 'left');
-		$this->db->where('id_konsultasi', $id);
+		$this->db->select("tb_konsultasi.id_konsultasi as id_konsultasi, tb_konsultasi.id_pasien as id_pasien, tb_pasien.nama as nama, DATE_FORMAT(tb_konsultasi.tanggal_konsultasi, '%d %M %Y') as tanggal_konsultasi, tb_konsultasi.hasil_konsultasi as hasil_konsultasi, tb_konsultasi.persentase as persentase, tb_konsultasi.solusi as solusi, tb_konsultasi.tdd as tdd, tb_konsultasi.tds as tds, tb_konsultasi.kbb as kbb, tb_konsultasi.uk as uk, tb_konsultasi.ui as ui, tb_konsultasi.edema as edema, tb_konsultasi.proteinuria as proteinuria");
+        $this->db->from("tb_konsultasi");
+        $this->db->join("tb_pasien", "tb_pasien.id_pasien = tb_konsultasi.id_pasien", "left");
+        $this->db->where("tb_konsultasi.id_konsultasi", $id);
+        $query = $this->db->get();
 
-		$result = $this->db->get('tb_konsultasi');
-		return $result->result();
+        return $query->result();
+		// $this->db->join('tb_pasien', 'tb_pasien.id_pasien = tb_konsultasi.id_pasien', 'left');
+		// $this->db->where('id_konsultasi', $id);
+
+		// $result = $this->db->get('tb_konsultasi');
+		// return $result->result();
 	}
 
 	public function get_pasien($id){

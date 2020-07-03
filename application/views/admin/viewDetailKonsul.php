@@ -1,20 +1,17 @@
-<!-- <div style="max-width: 3000px"> -->
+<div style="max-width: 3000px"> -->
 <div class="container" style="width: 2000px">
 <div class="col-sm-10 right_col grid-margin stretch-card">
 	<div class="card">
 		<div class="card-body">
-      <h2>Data Konsultasi (<?php echo $pasien->nama; ?>)</h2>
-      <!-- <?php foreach($data as $row): ?>
-        <?php echo $row->nama;?>
-      <?php endforeach ?> -->
-      <!-- <?php echo $this->db->where('nama') ;?> -->
-      <!-- <?php echo $this->db->from('id_pasien') ;?> -->
+      <h1 style="text-align: center; color: black;">Data Konsultasi </h1>
+      <p style="color: black">Nama : <?php echo $pasien->nama  ?></p>
+      <p style="color: black"> Tanggal Lahir : <?php echo $pasien->tgl_lahir ?></p>
 			<table id="datatable" class="table table-bordered">
               <thead>
                 <tr>
                   <th> No </th>
                   <!-- <th> Id Konsultasi </th> -->
-                  <th> Nama Pasien </th>
+                  <!-- <th> Nama Pasien </th> -->
                   <th> Tanggal Konsultasi </th>
                   <th> Hasil Konsultasi </th>
                   <th> Presentase </th>
@@ -26,7 +23,7 @@
               	<?php $no=1; foreach($data as $row): ?> 
                 <td><?php echo $no++; ?></td>
                 <!-- <td><?php echo $row->id_konsultasi;?> </td> -->
-                <td><?php echo $row->nama;?> </td>
+                <!-- <td><?php echo $row->nama;?> </td> -->
                 <td><?php echo $row->tanggal_konsultasi; ?></td>
                 <td><?php echo $row->hasil_konsultasi; ?></td>
                 <td><?php echo sprintf("%.2f%%", $row->persentase); ?></td>
@@ -78,4 +75,4 @@
     </form>
   </div>
 </div>
-<?php endforeach; ?> -->
+<?php endforeach; ?>

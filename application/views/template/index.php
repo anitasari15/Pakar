@@ -1,5 +1,5 @@
 <?php
-    if ($this->session->userdata('level') != 0 && $this->session->userdata('level') != 1 && $this->session->userdata('level') != 2) {
+    if ($this->session->userdata('id_level') != 1) {
         redirect('ctrLogin');
     }
 ?>
@@ -53,7 +53,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Sistem Pakar</span></a>
+              <a href="index.html" class="site_title"> <span>Sistem Pakar</span></a>
             </div>
 
             <div class="clearfix"></div>

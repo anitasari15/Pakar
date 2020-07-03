@@ -58,6 +58,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         
  	}
 
+    public function ubah(){
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('nama', 'nama', 'required');
+        if($this->form_validation->run()==FALSE){
+            $this->session->set_flashdata('error',"Data Gagal Di Edit");
+            redirect('ctrPasien');
+        }else{
+            $data=array(
+                "nama"=>$_POST['nama'],
+                "alamat"=>$_POST['alamat'],
+                "tgl_lahir"=>$_POST['tgl_lahir']
+            );
+            $this->db->where('id_pasien', $_POST['id_pasien']);
+            $this->db->update('tb_pasien',$data);
+            $this->session->set_flashdata('sukses',"Data Berhasil Diedit");
+            redirect('ctrPasien');
+        }
+    }
+
  	public function hapus($id){
  		if($id==""){
             $this->session->set_flashdata('error',"Data Anda Gagal Di Hapus");
