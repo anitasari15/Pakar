@@ -14,6 +14,7 @@ class ctrRiwayat extends CI_Controller
 
 	public function index(){
 		$data['data'] = $this->dataProfil->get_riwayat($this->session->userdata('id_pasien'));
+		// $data['pasien'] = $this->modelView->get_pasien($id);
 
 		$this->load->view('pasien/riwayat',$data);
 	}

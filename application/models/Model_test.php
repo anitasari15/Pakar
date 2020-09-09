@@ -107,42 +107,42 @@ class Model_test extends CI_Model {
 
 		switch ($himpunan) {
 			case 'normal':
-				if($nilai <= 120) {
-					$nilai_himpunan = 1;
-				} else if($nilai > 120 && $nilai < 160) {
-					$nilai_himpunan = (160 - $nilai) / (160 - 120);
-				} else {
-					$nilai_himpunan = 0;
-				}
-				break;
+			if($nilai <= 120) {
+				$nilai_himpunan = 1;
+			} else if($nilai > 120 && $nilai < 160) {
+				$nilai_himpunan = (160 - $nilai) / (160 - 120);
+			} else {
+				$nilai_himpunan = 0;
+			}
+			break;
 
 			case 'tinggi':
-				if($nilai <= 120) {
-					$nilai_himpunan = 0;
-				} else if($nilai > 120 && $nilai < 160) {
-					$nilai_himpunan = ($nilai - 120) / (160 - 120);
-				} else if($nilai == 160) {
-					$nilai_himpunan = 1;
-				} else if($nilai > 160 && $nilai < 200) {
-					$nilai_himpunan = (200 - $nilai) / (200 - 160);
-				} else {
-					$nilai_himpunan = 0;
-				}
-				break;
+			if($nilai <= 120) {
+				$nilai_himpunan = 0;
+			} else if($nilai > 120 && $nilai < 160) {
+				$nilai_himpunan = ($nilai - 120) / (160 - 120);
+			} else if($nilai == 160) {
+				$nilai_himpunan = 1;
+			} else if($nilai > 160 && $nilai < 200) {
+				$nilai_himpunan = (200 - $nilai) / (200 - 160);
+			} else {
+				$nilai_himpunan = 0;
+			}
+			break;
 
 			case 'sangat_tinggi':
-				if($nilai <= 160) {
-					$nilai_himpunan = 0;
-				} else if($nilai > 160 && $nilai < 200) {
-					$nilai_himpunan = ($nilai - 160) / (200 - 160);
-				} else {
-					$nilai_himpunan = 1;
-				}
-				break;
+			if($nilai <= 160) {
+				$nilai_himpunan = 0;
+			} else if($nilai > 160 && $nilai < 200) {
+				$nilai_himpunan = ($nilai - 160) / (200 - 160);
+			} else {
+				$nilai_himpunan = 1;
+			}
+			break;
 			
 			default:
 				# code...
-				break;
+			break;
 		}
 
 		return $nilai_himpunan;
@@ -153,42 +153,42 @@ class Model_test extends CI_Model {
 
 		switch ($himpunan) {
 			case 'normal':
-				if($nilai <= 70) {
-					$nilai_himpunan = 1;
-				} else if($nilai > 70 && $nilai < 110) {
-					$nilai_himpunan = (110 - $nilai) / (110 - 70);
-				} else {
-					$nilai_himpunan = 0;
-				}
-				break;
+			if($nilai <= 70) {
+				$nilai_himpunan = 1;
+			} else if($nilai > 70 && $nilai < 110) {
+				$nilai_himpunan = (110 - $nilai) / (110 - 70);
+			} else {
+				$nilai_himpunan = 0;
+			}
+			break;
 
 			case 'tinggi':
-				if($nilai <= 70) {
-					$nilai_himpunan = 0;
-				} else if($nilai > 70 && $nilai < 110) {
-					$nilai_himpunan = ($nilai - 70) / (110 - 70);
-				} else if($nilai == 110) {
-					$nilai_himpunan = 1;
-				} else if($nilai > 110 && $nilai < 150) {
-					$nilai_himpunan = (150 - $nilai) / (150 - 110);
-				} else {
-					$nilai_himpunan = 0;
-				}
-				break;
+			if($nilai <= 70) {
+				$nilai_himpunan = 0;
+			} else if($nilai > 70 && $nilai < 110) {
+				$nilai_himpunan = ($nilai - 70) / (110 - 70);
+			} else if($nilai == 110) {
+				$nilai_himpunan = 1;
+			} else if($nilai > 110 && $nilai < 150) {
+				$nilai_himpunan = (150 - $nilai) / (150 - 110);
+			} else {
+				$nilai_himpunan = 0;
+			}
+			break;
 
 			case 'sangat_tinggi':
-				if($nilai <= 110) {
-					$nilai_himpunan = 0;
-				} else if($nilai > 110 && $nilai < 150) {
-					$nilai_himpunan = ($nilai - 110) / (150 - 110);
-				} else {
-					$nilai_himpunan = 1;
-				}
-				break;
+			if($nilai <= 110) {
+				$nilai_himpunan = 0;
+			} else if($nilai > 110 && $nilai < 150) {
+				$nilai_himpunan = ($nilai - 110) / (150 - 110);
+			} else {
+				$nilai_himpunan = 1;
+			}
+			break;
 			
 			default:
 				# code...
-				break;
+			break;
 		}
 
 		return $nilai_himpunan;
@@ -199,42 +199,42 @@ class Model_test extends CI_Model {
 
 		switch ($himpunan) {
 			case 'rendah':
-				if($nilai <= 0) {
-					$nilai_himpunan = 1;
-				} else if($nilai > 0 && $nilai < 2) {
-					$nilai_himpunan = (2 - $nilai) / (2 - 0);
-				} else {
-					$nilai_himpunan = 0;
-				}
-				break;
+			if($nilai <= 0) {
+				$nilai_himpunan = 1;
+			} else if($nilai > 0 && $nilai < 2) {
+				$nilai_himpunan = (2 - $nilai) / (2 - 0);
+			} else {
+				$nilai_himpunan = 0;
+			}
+			break;
 
 			case 'normal':
-				if($nilai <= 0) {
-					$nilai_himpunan = 0;
-				} else if($nilai > 0 && $nilai < 2) {
-					$nilai_himpunan = ($nilai - 0) / (2 - 0);
-				} else if($nilai == 2) {
-					$nilai_himpunan = 1;
-				} else if($nilai > 2 && $nilai < 4) {
-					$nilai_himpunan = (4 - $nilai) / (4 - 2);
-				} else {
-					$nilai_himpunan = 0;
-				}
-				break;
+			if($nilai <= 0) {
+				$nilai_himpunan = 0;
+			} else if($nilai > 0 && $nilai < 2) {
+				$nilai_himpunan = ($nilai - 0) / (2 - 0);
+			} else if($nilai == 2) {
+				$nilai_himpunan = 1;
+			} else if($nilai > 2 && $nilai < 4) {
+				$nilai_himpunan = (4 - $nilai) / (4 - 2);
+			} else {
+				$nilai_himpunan = 0;
+			}
+			break;
 
 			case 'tinggi':
-				if($nilai <= 2) {
-					$nilai_himpunan = 0;
-				} else if($nilai > 2 && $nilai < 4) {
-					$nilai_himpunan = ($nilai - 2) / (4 - 2);
-				} else {
-					$nilai_himpunan = 1;
-				}
-				break;
+			if($nilai <= 2) {
+				$nilai_himpunan = 0;
+			} else if($nilai > 2 && $nilai < 4) {
+				$nilai_himpunan = ($nilai - 2) / (4 - 2);
+			} else {
+				$nilai_himpunan = 1;
+			}
+			break;
 			
 			default:
 				# code...
-				break;
+			break;
 		}
 
 		return $nilai_himpunan;
@@ -259,42 +259,42 @@ class Model_test extends CI_Model {
 
 		switch ($himpunan) {
 			case 'tinggi':
-				if($nilai <= 15) {
-					$nilai_himpunan = 1;
-				} else if($nilai > 15 && $nilai < 20) {
-					$nilai_himpunan = (20 - $nilai) / (20 - 15);
-				} else {
-					$nilai_himpunan = 0;
-				}
-				break;
+			if($nilai <= 15) {
+				$nilai_himpunan = 1;
+			} else if($nilai > 15 && $nilai < 20) {
+				$nilai_himpunan = (20 - $nilai) / (20 - 15);
+			} else {
+				$nilai_himpunan = 0;
+			}
+			break;
 
 			case 'normal':
-				if($nilai <= 15) {
-					$nilai_himpunan = 0;
-				} else if($nilai > 15 && $nilai < 20) {
-					$nilai_himpunan = ($nilai - 15) / (20 - 15);
-				} else if($nilai >= 20 && $nilai <= 35) {
-					$nilai_himpunan = 1;
-				} else if($nilai > 35 && $nilai < 40) {
-					$nilai_himpunan = (40 - $nilai) / (40 - 35);
-				} else {
-					$nilai_himpunan = 0;
-				}
-				break;
+			if($nilai <= 15) {
+				$nilai_himpunan = 0;
+			} else if($nilai > 15 && $nilai < 20) {
+				$nilai_himpunan = ($nilai - 15) / (20 - 15);
+			} else if($nilai >= 20 && $nilai <= 35) {
+				$nilai_himpunan = 1;
+			} else if($nilai > 35 && $nilai < 40) {
+				$nilai_himpunan = (40 - $nilai) / (40 - 35);
+			} else {
+				$nilai_himpunan = 0;
+			}
+			break;
 
 			case 'resiko_tinggi':
-				if($nilai <= 40) {
-					$nilai_himpunan = 0;
-				} else if($nilai > 35 && $nilai < 40) {
-					$nilai_himpunan = ($nilai - 35) / (40 - 35);
-				} else {
-					$nilai_himpunan = 1;
-				}
-				break;
+			if($nilai <= 40) {
+				$nilai_himpunan = 0;
+			} else if($nilai > 35 && $nilai < 40) {
+				$nilai_himpunan = ($nilai - 35) / (40 - 35);
+			} else {
+				$nilai_himpunan = 1;
+			}
+			break;
 			
 			default:
 				# code...
-				break;
+			break;
 		}
 
 		return $nilai_himpunan;
@@ -306,7 +306,7 @@ class Model_test extends CI_Model {
 		return $kategori_gejala['cf_gejala'];
 	}
 
-	public function get_nilai_defuzzyfikasi($tds, $tdd, $kbb, $ui) {
+	public function get_nilai_defuzzyfikasi($tds, $tdd, $kbb, $ui, $uk, $edema, $proteinuria) {
 		$total_nilai = 0;
 		$total_cf = 0;
 
@@ -357,6 +357,18 @@ class Model_test extends CI_Model {
 				$total_cf += $cf;
 			}
 		}
+
+		$cf = $this->get_cf_gejala('UK', $uk);
+		$total_nilai += $cf;
+		$total_cf += $cf;
+
+		$cf = $this->get_cf_gejala('EDEMA', $edema);
+		$total_nilai += $cf;
+		$total_cf += $cf;
+
+		$cf = $this->get_cf_gejala('PROTEINURIA', $proteinuria);
+		$total_nilai += $cf;
+		$total_cf += $cf;
 
 		return $total_nilai / $total_cf;
 	}

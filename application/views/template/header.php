@@ -58,9 +58,9 @@
                     <li>
                         <a href="<?php echo site_url() ?>/ctrLogin" class="btn btn-info btn-fill btn-lg ">Login</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="<?php echo site_url() ?>/ctrRegis" class="btn btn-info btn-fill btn-lg">Sign Up</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

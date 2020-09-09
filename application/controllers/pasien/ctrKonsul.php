@@ -76,7 +76,7 @@ class ctrKonsul extends CI_Controller
 		$fk_proteinuria = $proteinuria;
 
 		// Nilai Defuzzyfikasi
-		$nilai_z = $this->model_test->get_nilai_defuzzyfikasi($fk_tds, $fk_tdd, $fk_kbb, $fk_ui);
+		$nilai_z = $this->model_test->get_nilai_defuzzyfikasi($fk_tds, $fk_tdd, $fk_kbb, $fk_ui, $fk_uk, $fk_edema, $fk_proteinuria);
 
 		// Array Keanggotaan
 		$arr_tds = $this->model_test->get_arr_keanggotaan($fk_tds);

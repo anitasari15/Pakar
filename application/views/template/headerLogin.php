@@ -21,7 +21,7 @@
       <h1>Login Sistem Pakar Preeklampsia</h1>
         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login-pakar"><i class="fa fa-plus"></i> Login Pakar </button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-login-pasien"><i class="fa fa-plus"></i> Login Pasien </button> -->
-      <form method="post" action="<?php echo base_url('ctrLogin/cekLogin') ?>">
+      <form method="post" action="<?php echo base_url('CtrLogin/cekLogin') ?>">
         <p><input type="text" name="username" value="" placeholder="Username"></p>
         <p><input type="password" name="password" value="" placeholder="Password"></p>
          

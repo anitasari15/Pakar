@@ -1,0 +1,58 @@
+/*tampilan hp*/
+@media screen and (max-width: 667px) {
+.container{
+background-color: green;
+right: 50px;
+  width: 40%;
+  top: 10%;
+  margin-right: 15%;
+  height: 90%;
+  max-width: 30%;
+  padding: 6px;
+}
+.alamat {
+  width: 100%;
+}
+.form-control{
+  margin: 10px;
+  font-size: 12pt;
+  padding: 10px;
+  border-radius: 25px;
+  width: 25px;
+  height: 35px;
+}
+}
+
+/*tampilan pc*/
+@media screen and (min-width: 601px) {
+.container {
+  position: absolute;
+  right: 90px;
+  /*width: 40%;*/
+  /*top: 10%;*/
+  margin-right: 15%;
+  height: 60%;
+  /*max-width: 30%;*/
+  /*padding: 16px;*/
+  background-color: transparent;
+}
+
+.alamat{
+  /*border: 1px solid transparent !important; width: 50px;height: 150px*/
+  margin: 10px;
+  font-size: 12pt;
+  padding: 10px;
+  border-radius: 25px;
+  width: 25px;
+  height: 35px;
+}
+
+.form-control{
+  margin: 10px;
+  font-size: 12pt;
+  padding: 10px;
+  border-radius: 25px;
+  width: 25px;
+  height: 35px;
+}
+}

@@ -66,6 +66,7 @@
           </div>
           <div class="col-md-6">
             <div  class="pull-right" style="background: #fff; padding: 5px 10px; border: 1px solid #ccc">
+        <!-- <a href="<?php echo base_url('welcome/hasil') ?>" class="btn btn-primary">Generate hasil dong 1 klik aja</a> -->
               <label>Tahun</label>
               <select onchange="change_year(this)">
                 <option>Semua</option>
