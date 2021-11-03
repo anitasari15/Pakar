@@ -26,7 +26,7 @@
                         <td>
                           <center>
                             <div>
-                              <a data-toggle="modal" data-target="#modal-edit<?=$row->id_gejala;?>" class="btn btn-warning btn-circle" data-popup="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil"></i></a>
+                              <!-- <a data-toggle="modal" data-target="#modal-edit<?=$row->id_gejala;?>" class="btn btn-warning btn-circle" data-popup="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil"></i></a> -->
                               <!-- <a href="<?php echo site_url('ctrGejala/hapus/'.$row->id_gejala); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->nama_gejala;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-trash"></i></a> -->
                             </div>
                           </center>

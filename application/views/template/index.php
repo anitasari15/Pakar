@@ -1,8 +1,4 @@
-<?php
-    if ($this->session->userdata('id_level') != 1) {
-        redirect('ctrLogin');
-    }
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -77,20 +73,20 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="<?php echo site_url() ?>welcome/dashboard"><i class="fa fa-home"></i> Home </a>
+                  <li><a href="<?php echo site_url() ?>/welcome/dashboard"><i class="fa fa-home"></i> Home </a>
                   </li>
                   <!-- <li><a href="<?php echo site_url() ?>/ctrUser"><i class="fa fa-user"></i> User </a>
                   </li> -->
-                  <li><a href="<?php echo site_url() ?>ctrPasien"><i class="fa fa-user"></i> Pasien </a>
+                  <li><a href="<?php echo site_url() ?>/ctrPasien"><i class="fa fa-user"></i> Pasien </a>
                   </li>
-                  <!-- <li><a href="<?php echo site_url() ?>ctrGejala"><i class="fa fa-folder"></i> Gejala </a> -->
+                  <!-- <li><a href="<?php echo site_url() ?>/ctrGejala"><i class="fa fa-folder"></i> Gejala </a> -->
                   </li>
-                  <li><a href="<?php echo site_url() ?>ctrKategori"><i class="fa fa-user"></i> Gejala </a>
-                  </li><li><a href="<?php echo site_url() ?>ctrSolusi"><i class="fa fa-user"></i> Solusi</a>
+                  <li><a href="<?php echo site_url() ?>/ctrKategori"><i class="fa fa-user"></i> Gejala </a>
+                  </li><li><a href="<?php echo site_url() ?>/ctrSolusi"><i class="fa fa-user"></i> Solusi</a>
                   </li>
-                  <li><a href="<?php echo site_url() ?>ctrKonsul"><i class="fa fa-table"></i> Konsultasi </span></a>
+                  <li><a href="<?php echo site_url() ?>/ctrKonsul"><i class="fa fa-table"></i> Konsultasi </span></a>
                   </li>
-                  <li><a href="<?php echo site_url() ?>ctrDataKonsul"><i class="fa fa-bar-chart-o"></i> Rekam Medik </a>
+                  <li><a href="<?php echo site_url() ?>/ctrDataKonsul"><i class="fa fa-bar-chart-o"></i> Rekam Medik </a>
                   </li>
                 </ul>
               </div>

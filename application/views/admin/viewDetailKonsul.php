@@ -31,7 +31,7 @@
                 <td>
                   <center>
                     <div>
-                      <a href="<?php echo base_url() ?>ctrDataKonsul/viewdetail/<?php echo $row->id_konsultasi ?>" class="btn btn-info btn-success" data-placement="top" title="Lihat Data"><i class="fa fa-eye"></i></a>
+                      <a href="<?php echo site_url() ?>/ctrDataKonsul/viewdetail/<?php echo $row->id_konsultasi ?>" class="btn btn-info btn-success" data-placement="top" title="Lihat Data"><i class="fa fa-eye"></i></a>
                       <!-- <a data-toggle="modal" data-target="#modal-edit<?=$row->id_konsultasi;?>" class="btn btn-warning btn-circle" data-popup="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil"></i></a> -->
                     </div>
                   </center>

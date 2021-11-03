@@ -22,8 +22,8 @@
 		</div>
 		<center>
                     <div>
-                      <a href="<?php echo base_url()?>ctrDataKonsul/detail/<?php echo $x->id_pasien ?>" class="btn btn-circle btn-success" style="color: black" data-placement="top" title="Kembali"><i class="fa fa-mail-reply"></i></a>
-                      <a href="<?php echo base_url()?>ctrPdf/cetak/<?php echo $x->id_konsultasi ?>" class="btn btn-danger btn-circle" style="color: black" data-placement="top" title="Cetak Data"><i class="fa fa-file"></i></a>
+                      <a href="<?php echo site_url()?>/ctrDataKonsul/detail/<?php echo $x->id_pasien ?>" class="btn btn-circle btn-success" style="color: black" data-placement="top" title="Kembali"><i class="fa fa-mail-reply"></i></a>
+                      <a href="<?php echo site_url()?>/ctrPdf/cetak/<?php echo $x->id_konsultasi ?>" class="btn btn-danger btn-circle" style="color: black" data-placement="top" title="Cetak Data"><i class="fa fa-file"></i></a>
                       <!-- <button class="btn btn-danger" type="Submit" name="tampil" value="download"><span class="glyphicon glyphicon-download-alt" title="cetak data"></span></button> -->
                     </div>
                   </center>

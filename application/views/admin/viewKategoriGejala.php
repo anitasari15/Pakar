@@ -32,7 +32,7 @@
           <!-- <td><?php echo $row->nilai_gejala;?> </td>
           <td><?php echo $row->label_gejala;?></td> -->
           <!-- <td><?php echo $row->cf_gejala;?> </td>
-          <td><?php echo $row->gejala;?> </td>
+          <td><?php echo $row->gejala;?> </td> -->
           <td>
             <center>
               <div>
@@ -40,7 +40,7 @@
                 <a href="<?php echo site_url('ctrKategori/hapus/'.$row->id_kategori_gejala); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->kategori_gejala;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-trash"></i></a>
               </div>
             </center>
-          </td> -->
+          </td>
         </tr>
       <?php endforeach;?>
     </tbody>

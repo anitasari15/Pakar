@@ -67,7 +67,7 @@
                 <td>
                   <center>
                     <div>
-                      <a href="<?php echo base_url() ?>ctrDataKonsul/detail/<?php echo $row->id_pasien ?>" class="btn btn-info btn-circle"><i class="fa fa-eye"></i></a>
+                      <a href="<?php echo site_url() ?>/ctrDataKonsul/detail/<?php echo $row->id_pasien ?>" class="btn btn-info btn-circle"><i class="fa fa-eye"></i></a>
                       <!-- <a href="<?php echo site_url('ctrGejala/hapus/'.$row->id_konsultasi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data <?=$row->id_konsultasi;?> ?');" class="btn btn-danger btn-circle" data-popup="tooltip" data-placement="top" title="Hapus Data"><i class="fa fa-file-pdf-o"></i></a> -->
                     </div>
                   </center>
